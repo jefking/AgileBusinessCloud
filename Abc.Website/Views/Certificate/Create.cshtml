@@ -1,0 +1,50 @@
+@model Abc.Website.Models.CertificateCreateModel
+
+@{
+    ViewBag.Title = "Upload Certificate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Upload Certificate</h2>
+@using (Html.BeginForm("Create", "Certificate", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+    @Html.ValidationSummary(true)
+    
+    <fieldset>
+        <legend></legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            Certificate File
+        </div>
+        <div class="editor-field">
+            <input type="file" name="file" id="file" size="20" />
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <p>
+            <input type="submit" value="Upload" class="button-normal green" />
+        </p>
+    </fieldset>
+}

@@ -1,0 +1,121 @@
+﻿@using Abc.Website;
+@using Abc.Services.Contracts;
+@using System.Linq;
+@model Abc.Website.Models.ManagementModel
+@{
+  ViewBag.Title = "Current Server Utilization Statistics | ABC";
+}
+<div class="line page-collector-brief">
+  <h1 class="custom-widgets-title no-topad">@Model.Application.Name &gt; @Model.Application.Environment
+    &gt; Current Server Utilization Statistics</h1>
+  <p>@Model.Application.Description</p>
+  @if (Model.Data != null && 0 < ((IEnumerable<ServerStatisticSetDisplay>)this.Model.Data).Count())
+  {
+    <div class="section full component component-server-statistics">
+      @foreach (ServerStatisticSetDisplay item in this.Model.Data)
+      {
+        if (item.CpuUsagePercentage >= 90)
+        {
+        <div class="bar-notice notice-error">
+          CPU Utilization is High (@item.CpuUsagePercentage%) on @item.MachineName: <strong>Critical</strong>.<span></span></div>
+        <div class="manager-controls">
+        </div>
+        }
+        else if (item.CpuUsagePercentage >= 60)
+        {
+        <div class="bar-notice notice-warning">
+          CPU Utilization is Moderate (@item.CpuUsagePercentage%) on @item.MachineName: <strong>Monitor</strong>.<span></span></div>
+        <div class="manager-controls">
+        </div>
+        }
+
+        if (item.MemoryUsagePercentage >= 95)
+        {
+        <div class="bar-notice notice-error">
+          Memory Utilization is High (@item.MemoryUsagePercentage%) on @item.MachineName: <strong>Critical</strong>.<span></span></div>
+        <div class="manager-controls">
+        </div>
+        }
+        else if (item.MemoryUsagePercentage >= 90)
+        {
+        <div class="bar-notice notice-warning">
+          Memory Utilization is High (@item.MemoryUsagePercentage%) on @item.MachineName: <strong>Warning</strong>.<span></span></div>
+        <div class="manager-controls">
+        </div>
+        }
+        else if (item.MemoryUsagePercentage >= 75)
+        {
+        <div class="bar-notice notice-info">
+          Memory Utilization is Moderate (@item.MemoryUsagePercentage%) on @item.MachineName: <strong>Monitor</strong>.<span></span></div>
+        <div class="manager-controls">
+        </div>
+        }
+
+        if (null != item.NetworkPercentages)
+        {
+          if (item.NetworkPercentages.Max() >= 65)
+          {
+        <div class="bar-notice notice-error">
+          Network Utilization is High (@item.NetworkPercentages.Max()%) on @item.MachineName: <strong>Critical</strong>.<span></span></div>
+        <div class="manager-controls">
+        </div>
+          }
+          else if (item.NetworkPercentages.Max() >= 60)
+          {
+        <div class="bar-notice notice-warning">
+          Network Utilization is Moderate (@item.NetworkPercentages.Max()%) on @item.MachineName: <strong>Monitor</strong>.<span></span></div>
+        <div class="manager-controls">
+        </div>
+          }
+        }
+
+        if (item.PhysicalDiskUsagePercentage >= 65)
+        {
+        <div class="bar-notice notice-error">
+          IO Utilization is High (@item.PhysicalDiskUsagePercentage%) on @item.MachineName: <strong>Critical</strong>.<span></span></div>
+        <div class="manager-controls">
+        </div>
+        }
+        else if (item.PhysicalDiskUsagePercentage >= 60)
+        {
+        <div class="bar-notice notice-warning">
+          OI Utilization is Moderate (@item.PhysicalDiskUsagePercentage%) on @item.MachineName: <strong>Monitor</strong>.<span></span></div>
+        <div class="manager-controls">
+        </div>
+        }
+      }
+      @foreach (ServerStatisticSetDisplay item in this.Model.Data)
+      {
+        <div class="line server-perf-report" id="@item.MachineName">
+          <div class="unit size1of5">
+            <h2>@item.MachineName</h2>
+            <span>Reported @item.OccurredOn.Relative()</span>
+            @if (null != item.NetworkPercentages)
+            {
+            <h5>NIC* @Math.Round(item.NetworkPercentages.Max(), 0)%</h5>
+            }
+          </div>
+          <div class="unit size4of5">
+            <div class="cpu">
+              <a href="#" class="label-cpu" title="CPU">CPU</a><span class="graph-cpu"></span> <a href="#" class="value-cpu" title="Currently running at @Math.Round(item.CpuUsagePercentage, 0)%">@Math.Round(item.CpuUsagePercentage, 0)%</a>
+            </div>
+            <div class="mem">
+              <a href="#" class="label-mem" title="Memory">Mem</a> <span class="graph-mem"></span><a href="#" class="value-mem" title="Currently running at @Math.Round(item.MemoryUsagePercentage, 0)%">@Math.Round(item.MemoryUsagePercentage, 0)%</a>
+            </div>
+            <div class="io">
+              <a href="#" class="label-io" title="Input output">IO</a><span class="graph-io"></span><a href="#" class="value-io" title="Currently running at @Math.Round(item.PhysicalDiskUsagePercentage, 0)%">@Math.Round(item.PhysicalDiskUsagePercentage, 0)%</a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="line full">
+      <div class="italic x-small">Graph is data collected over the past 24 hours. Notifications occur when thresholds are exceded; to learn more view our @Html.ActionLink("Notification Definitions", "notifications", "Help")</div>
+    </div>
+  }
+  else
+  {
+    <div class="bar-notice notice-warning">
+      No service usage statistics logged in the past 10 minutes.<span></span></div>
+  }
+</div>

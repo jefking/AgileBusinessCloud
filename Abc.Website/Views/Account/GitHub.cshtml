@@ -1,0 +1,47 @@
+﻿@using Abc.Website
+@model Abc.Website.Models.UserProfile
+@{
+    ViewBag.Title = string.Format("{0}' GitHub Activity | ABC", Model.UserName);
+}
+<div class="section account-github">
+    <div class="tiny x3 main">
+        <h1 class="custom-widgets-title no-topad">
+            My GitHub Activity</h1>
+        @if (!string.IsNullOrWhiteSpace(Model.GitHubHandle))
+        {
+            @Html.Hidden("GitHubHandle", Model.GitHubHandle)
+            <div class="section section-github-activities component">
+                <div class="UIBlock">
+                </div>
+                <ul class="github-activity-list component" modelsource="abc.profile.GithubActivities">
+                    {{#GithubActivities}}
+                    <li class="line">
+                        <div class="unit picture">
+                            <img src="http://www.gravatar.com/avatar/{{TargetPicture}}?s=40" />
+                        </div>
+                        <div class="unit info">
+                            <div class="gutter">
+                                {{{Message}}} <span class="date">{{DateRelative}}</span>
+                            </div>
+                        </div>
+                    </li>
+                    {{/GithubActivities}} {{^GithubActivities}}
+                    <li>Aw snap, looks like you don't have a Github handle! Add it to your profile and we
+                        can easily pull in your public activity on Github.</li>
+                    {{/GithubActivities}}
+                </ul>
+            </div>
+        }
+    </div>
+    <div class="tiny">
+        @Html.Partial("_Profiles")
+        <br />
+        <br />
+        <br />
+        @Html.Partial("_Social")
+        <br />
+        @Html.Partial("_Events")
+        <br />
+        @Html.Partial("_tweets")
+    </div>
+</div>

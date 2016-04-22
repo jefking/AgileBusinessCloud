@@ -1,0 +1,84 @@
+﻿@model Abc.Website.Models.UserPublicProfile
+@{  
+  ViewBag.Title = Model.UserName + " is CodeStorming | CodeStorm: Social DevOps";
+  ViewBag.Description = Model.UserName + " is passionate about making DevOps more connected | CodeStorm";
+  Layout = "~/Views/Shared/Layouts/_ProfileLayout.cshtml";
+}
+@Html.Partial("Profile/_HeroicBanner")
+<div class="band mt25 mb100 codestorm-user-profile-view">
+  <div class="container">
+    <div class="twelve columns">
+      <ul class="tabs">
+        <li><a class="active" href="@Url.RouteUrl("DevOp")"><i class="icon-user"></i>Profile</a></li>
+      </ul>
+      <ul class="tabs-content">
+        <li class="active">
+          <section>
+            <h2>Recent Activity</h2>
+            <ul class="cs-profile-activities">
+              <li>
+                <div class="alert">
+                  @Model.UserName has just gone beast mode!
+                </div>
+              </li>
+            </ul>
+            <div class="conversations-component" data-cs-abchandle="@ViewBag.abcHandle">
+              <div class="row-fluid">
+                <div class="span6">
+                  <h2>Recent Conversations</h2>
+                  <ol class="mentions" data-bind="foreach: mentions">
+                    <li class="mention"><a data-bind="attr: { href: TwitterProfileUrl, title: TwitterHandle }">
+                      <img class="img-circle" data-bind="attr:{src: TwitterPicture, alt: TwitterHandle }" /></a>
+                      <p><a class="handle" data-bind="text: TwitterHandle, attr: { href: TwitterProfileUrl }" target="_blank"></a></p>
+                      <p><span class="description" data-bind="text: TwitterDescription"></span></p>
+                    </li>
+                  </ol>
+                </div>
+                <div class="span6">
+                  <h2>Recent Tweets</h2>
+                  @Html.Partial("Profile/_TwitterStream")
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h2>Recent Achievements</h2>
+            <ul class="achievements">
+              @if (Model.TwitterHandle != null)
+              {
+                <li class="achievement available m-btn big green">
+                  <div class="achievement-wrapper">
+                    <h3 class="name">Tweet Tweet Tweet!</h3>
+                    <h4 class="points img-circle">10</h4>
+                    <p class="description">
+                      Complete! @Model.UserName has added a Twitter account to their
+                      profile.
+                    </p>
+                  </div>
+                </li> 
+              }
+              @if (Model.GitHubHandle != null)
+              {
+                <li class="achievement available m-btn big green">
+                  <div class="achievement-wrapper">
+                    <h3 class="name">Where's My Octocat?</h3>
+                    <h4 class="points img-circle">10</h4>
+                    <p class="description">
+                      Complete! @Model.UserName has added a Github account to their
+                      profile
+                    </p>
+                  </div>
+                </li> 
+              }
+            </ul>
+          </section>
+        </li>
+      </ul>
+    </div>
+    <div class="four columns">
+      <section>
+        @Html.Partial("Profile/_BasicUserInfo")
+      </section>
+    </div>
+  </div>
+</div>

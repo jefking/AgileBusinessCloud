@@ -1,0 +1,178 @@
+﻿@{
+    ViewBag.Title = "Staff | ABC";
+}
+<div class="content staff-home">
+    <div class="section">
+        <div class="small x2">
+            <div class="panel">
+                <div class="title">
+                    <h4>ABC > Staff</h4>
+                    <div class="theme">
+                    </div>
+                    <div class="drop">
+                    </div>
+                </div>
+                <div class="content inpad">
+                    <table class="table-simple no-margin" summary="Application Identifer">
+                        <tbody>
+                            <tr>
+                                <td>New New
+                                </td>
+                                <td>@Html.ActionLink("Dashboard", "Dashboard", "Logging")
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tools
+                                </td>
+                                <td>
+                                    <a href="https://remote.manteo.ca/cloud" class="button-normal light-blue" target="_blank">Jenkins<span class="ui-icon ui-icon-extlink"></span></a>
+                                </td>
+                                <td>
+                                    <a href="https://agilebc.atlassian.net/" class="button-normal light-blue" target="_blank">Jira OnDemand<span class="ui-icon ui-icon-extlink"></span></a>
+                                </td>
+                                <td>
+                                    <a href="https://gmail.com" class="button-normal light-blue" target="_blank">Gmail<span
+                                        class="ui-icon ui-icon-extlink"></span></a>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Open Source
+                                </td>
+                                <td>
+                                    <a href="//github.com/agilebusinesscloud" class="button-normal light-red" target="_blank">GitHub<span class="ui-icon ui-icon-extlink"></span></a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Design
+                                </td>
+                                <td>
+                                    <a href="//www.nicolaegabriel.info/live/revivas/" class="button-normal light-yellow"
+                                        target="_blank">Revivas Theme<span class="ui-icon ui-icon-extlink"></span></a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Applications
+                                </td>
+                                <td>
+                                    <a href="//cdn.agilebusinesscloud.com/download/Abc.Client.Collector.1.0.0.3.zip"
+                                        class="button-normal light-green" target="_blank">ABC Client Collector<span class="ui-icon ui-icon-arrowthick-1-s"></span></a>
+                                </td>
+                                <td>
+                                    <a href="//cdn.agilebusinesscloud.com/download/Abc.Atrak.1.0.2.2.zip" target="_blank"
+                                        class="button-normal light-green">A-Trak<span class="ui-icon ui-icon-arrowthick-1-s"></span></a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Security
+                                </td>
+                                <td>
+                                    <a href="https://agilebusinesscloud.accesscontrol.windows.net" class="button-normal light-pink"
+                                        target="_blank">Production ACS<span class="ui-icon ui-icon-extlink"></span></a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Services
+                                </td>
+                                <td>
+                                    <a href="https://entitlement.abcapi.ws/CentralHub.svc" class="button-normal" target="_blank">Application Entitlement<span class="ui-icon ui-icon-extlink"></span></a>
+                                </td>
+                                <td>
+                                    <a href="http://esb1.abcapi.ws/datum.svc" class="button-normal" target="_blank">Enterprise
+                                        Service Bus<span class="ui-icon ui-icon-extlink"></span></a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Payments
+                                </td>
+                                <td>@Html.Partial("_paypalAddApplication")
+                                </td>
+                                <td>
+                                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                        <input type="hidden" name="cmd" value="_s-xclick">
+                                        <input type="hidden" name="hosted_button_id" value="FQQ7GQ6DYHQSE">
+                                        <input type="submit" value="1 cent (live)" class="button-normal light-blue" name="submit">
+                                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
+                                            width="1" height="1">
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                                        <input type="hidden" name="cmd" value="_s-xclick">
+                                        <input type="hidden" name="hosted_button_id" value="MKFEJM6RG9L5W">
+                                        <input type="submit" class="button-normal light-blue" value="Add Application (SandBox)"
+                                            name="submit">
+                                        <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif"
+                                            width="1" height="1">
+                                    </form>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Microsoft
+                                </td>
+                                <td>
+                                    <a href="https://msdn.microsoft.com" class="button-normal light-pink" target="_blank">MSDN<span class="ui-icon ui-icon-extlink"></span></a>
+                                </td>
+                                <td>
+                                    <a href="https://partner.microsoft.com/" class="button-normal light-pink" target="_blank">Partner<span class="ui-icon ui-icon-extlink"></span></a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Other Tools
+                                </td>
+                                <td>
+                                    <a href="//www.browsermob.com/" class="button-normal light-red" target="_blank">BrowserMob<span class="ui-icon ui-icon-extlink"></span></a>
+                                </td>
+                                <td>
+                                    <a href="//www.pingdom.com/" class="button-normal light-red" target="_blank">PingDom<span
+                                        class="ui-icon ui-icon-extlink"></span></a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tiny">
+            ABC: <a href="//www.prchecker.info/" title="Check PageRank" target="_blank">
+                <img src="//pr.prchecker.info/getpr.php?codex=aHR0cDovL3d3dy5hZ2lsZWJ1c2luZXNzY2xvdWQuY29t&tag=1"
+                    alt="Check PageRank" style="border: 0;" /></a>
+        </div>
+        <div class="tiny">
+            <a href="//www.pingdom.com"><a
+                href="//www.pingdom.com">
+                <img src="//share.pingdom.com/banners/6a8ec65a" alt="Uptime for www.agilebusinesscloud.com: Last 30 days "
+                    title=" Uptime for www.agilebusinesscloud.com: Last 30 days" width="300" height="165" /></a>
+                </div>
+        <div class="tiny">
+                <img src="//share.pingdom.com/banners/e280db6b" alt="Response time for www.agilebusinesscloud.com: Last 30 days "
+                    title=" Response time for www.agilebusinesscloud.com: Last 30 days" width="300"
+                    height="165" /></a>
+        </div>
+        <div class="tiny">
+            CodeStorm: <a href="//www.prchecker.info/" title="Page Rank" target="_blank">
+                <img src="http://pr.prchecker.info/getpr.php?codex=aHR0cDovL2NvZGVzdG9ybS5pbg==&tag=1" alt="Page Rank" style="border: 0;" /></a>
+        </div>
+    </div>
+</div>

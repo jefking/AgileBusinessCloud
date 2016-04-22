@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="Abc.Host.Cloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+  <WorkerRole name="Abc.AzureWorker" vmsize="ExtraSmall">
+    <Startup>
+      <Task commandLine="Collector\Abc.Client.Collector.exe" taskType="background" executionContext="limited" />
+    </Startup>
+    <ConfigurationSettings>
+      <Setting name="DataConnectionString" />
+      <Setting name="CodeStorm.DataConnectionString" />
+    </ConfigurationSettings>
+  </WorkerRole>
+  <WebRole name="Abc.Services" vmsize="ExtraSmall" enableNativeCodeExecution="false">
+    <Startup>
+      <Task commandLine="Collector\Abc.Client.Collector.exe" taskType="background" executionContext="limited" />
+    </Startup>
+    <Sites>
+      <Site name="Services" physicalDirectory="..\Abc.Services">
+        <Bindings>
+          <Binding name="services" endpointName="HttpIn" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="HttpIn" protocol="http" port="80" />
+    </Endpoints>
+    <ConfigurationSettings>
+      <Setting name="DataConnectionString" />
+      <Setting name="MailGunApiKey" />
+      <Setting name="MailGunApi" />
+    </ConfigurationSettings>
+  </WebRole>
+</ServiceDefinition>

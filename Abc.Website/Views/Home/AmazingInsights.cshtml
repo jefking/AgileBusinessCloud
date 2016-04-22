@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Amazing Insights, Real-Time Application Analytics | ABC";
+}
+@if (!User.Identity.IsAuthenticated)
+{
+    <div class="bar-notice notice-info">
+        Simply @Html.ActionLink("login", "LogOn", "Account") to get your free application
+        identifier so you can start logging immediately!<span></span></div>
+}
+<div class="content amazing-insight-page">
+    <h1 class="custom-widgets-title no-topad">
+        Amazing Insights</h1>
+    <div class="section">
+        <div class="tiny x3 main">
+            <p>
+                Amazing Insights allows you to centrally log application performance, faults and
+                messages. If you are running a distributed software system on multiple servers you
+                need to see issues as they arise. Knowledge of your software system enables you
+                to be proactive, giving your clients a much better experience.</p>
+            <p>
+                By providing you with a .NET logging library, you are able to get logging in 5 minutes
+                or less! To download .NET client library and start logging now <a href="//cdn.agilebusinesscloud.com/download/Abc.Client.1.0.2.7.zip"
+                    target="_blank">click here</a>.</p>
+            <div class="line content inpad">
+                @Html.Partial("_IntegrationExamples")
+            </div>
+        </div>
+        <div class="tiny">
+            @Html.Partial("_Profiles")
+            <br />
+            <br />
+            <br />
+            @Html.Partial("_Social")
+            <br />
+            @Html.Partial("_tweets")
+        </div>
+    </div>
+</div>

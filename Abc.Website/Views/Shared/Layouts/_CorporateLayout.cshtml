@@ -1,0 +1,59 @@
+﻿@using Abc.Website;
+@using Abc.Configuration;
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="en-us" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en-us" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en-us" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en-us" class="no-js">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="msvalidate.01" content="3DBB7B567B7F2F4200BCB1A02C58D4C2" />
+  <title>@ViewBag.Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="@ViewBag.Keywords">
+  <meta name="description" content="@ViewBag.Description">
+  <meta name="author" content="Agile Business Cloud Solutions Ltd.">
+  @if (null == ViewBag.OGraphImage || string.IsNullOrWhiteSpace(ViewBag.OGraphImage as string))
+  {
+    <meta property="og:image" content="@Url.ContentCdn("~/content/images/logo-abc-blue-raw.png")" />
+  }
+  else
+  {
+    <meta property="og:image" content="@ViewBag.OGraphImage" />
+  }
+  <meta property="og:type" content="platform" />
+  <meta property="og:url" content="@Request.Url" />
+  <meta property="og:title" content="@ViewBag.Title" />
+  <meta property="og:site_name" content="ABC" />
+  <link href="@Url.Content("~/content/css/bootstrap.min.css")" rel="stylesheet" />
+  <link href="@Url.Content("~/content/css/bootstrap-responsive.min.css")" rel="stylesheet" />
+  <link href="@Url.Content("~/content/css/msft-metro-buttons.css")" rel="stylesheet" />
+  <link href="@Url.Content("~/content/css/corporate.css")" rel="stylesheet"/>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1/bootstrap.min.js"></script>
+  <script>
+      var ContentDeliveryNetworkScriptsURL = "@Url.ContentCdn("~/scripts/")";
+      var BlobScriptsURL = "@Url.ContentBlob("~/scripts/")";
+  </script>
+  @Html.Partial("_GoogleTracking")
+</head>
+<body>
+  @Html.Partial("_CorporateMainMenu")
+  <div class="content-container">
+    @RenderBody()
+  </div>
+  <footer>
+    @Html.Partial("_CorporateFooter")
+  </footer>
+  <script src="@Url.Content("~/scripts/lib/bootstrap.js")"></script>
+  @*  <script src="@Url.Content("~/scripts/lib/m.dropdown.js")"></script>*@
+  <script>var ABC = { FederationTLD: "@Settings.Instance["FederationTLD"]" }; </script>
+  <script src="@Url.Content("~/scripts/abc/helper/AuthenticationHelper.js")"></script>
+  <script src="@Url.ContentCdn("~/scripts/dist/plugins.js")"></script>
+  <script src="@Url.ContentCdn("~/scripts/dist/mojo.js")"></script>
+  <script src="@Url.ContentBlob("~/scripts/abc/app.js")"></script>
+</body>
+</html>

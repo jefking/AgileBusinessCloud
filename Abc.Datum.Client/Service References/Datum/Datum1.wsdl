@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Datum" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IDatum_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8002/Datum.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8002/Datum.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8002/Datum.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Abc.Services.Contracts" />
+      <xsd:import schemaLocation="http://localhost:8002/Datum.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDatum_LogException_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogException" />
+  </wsdl:message>
+  <wsdl:message name="IDatum_LogException_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogExceptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDatum_LogMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogMessage" />
+  </wsdl:message>
+  <wsdl:message name="IDatum_LogMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDatum_LogServerStatisticSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogServerStatisticSet" />
+  </wsdl:message>
+  <wsdl:message name="IDatum_LogServerStatisticSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogServerStatisticSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDatum_LogPerformance_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogPerformance" />
+  </wsdl:message>
+  <wsdl:message name="IDatum_LogPerformance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogPerformanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDatum_LogEventItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogEventItem" />
+  </wsdl:message>
+  <wsdl:message name="IDatum_LogEventItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogEventItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDatum_GetConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IDatum_GetConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDatum">
+    <wsdl:operation name="LogException">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDatum/LogException" message="tns:IDatum_LogException_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDatum/LogExceptionResponse" message="tns:IDatum_LogException_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDatum/LogMessage" message="tns:IDatum_LogMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDatum/LogMessageResponse" message="tns:IDatum_LogMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogServerStatisticSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDatum/LogServerStatisticSet" message="tns:IDatum_LogServerStatisticSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDatum/LogServerStatisticSetResponse" message="tns:IDatum_LogServerStatisticSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogPerformance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDatum/LogPerformance" message="tns:IDatum_LogPerformance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDatum/LogPerformanceResponse" message="tns:IDatum_LogPerformance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogEventItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDatum/LogEventItem" message="tns:IDatum_LogEventItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDatum/LogEventItemResponse" message="tns:IDatum_LogEventItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDatum/GetConfiguration" message="tns:IDatum_GetConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDatum/GetConfigurationResponse" message="tns:IDatum_GetConfiguration_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IDatum" type="tns:IDatum">
+    <wsp:PolicyReference URI="#WSHttpBinding_IDatum_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LogException">
+      <soap12:operation soapAction="http://tempuri.org/IDatum/LogException" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogMessage">
+      <soap12:operation soapAction="http://tempuri.org/IDatum/LogMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogServerStatisticSet">
+      <soap12:operation soapAction="http://tempuri.org/IDatum/LogServerStatisticSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogPerformance">
+      <soap12:operation soapAction="http://tempuri.org/IDatum/LogPerformance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogEventItem">
+      <soap12:operation soapAction="http://tempuri.org/IDatum/LogEventItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/IDatum/GetConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Datum">
+    <wsdl:port name="WSHttpBinding_IDatum" binding="tns:WSHttpBinding_IDatum">
+      <soap12:address location="http://localhost:8002/Datum.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8002/Datum.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

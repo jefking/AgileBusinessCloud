@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.OGraphImage = "http//gravatar.com/avatar/03e81268ddfe858d6aa8edec847e6e15";
+
+    string tweet = string.Empty;
+    if (null != this.Model.Post)
+    {
+        ViewBag.Title = string.Format("{0} | George Danes | ABC", this.Model.Post.Title);
+        tweet = string.Format("{0} by @GeorgeDanesABC via @WeAreABC", this.Model.Post.Title);
+    }
+    else
+    {
+        ViewBag.Title = "George Danes's Blog | ABC";
+        tweet = "Thoughts by George Danes via @GeorgeDanesABC @WeAreABC";
+    }
+}
+<div class="line">
+  <div class="small x2">
+    <div class="panel">
+      <div class="title">
+        <h4>George Danes > Chief Financial Officer</h4>
+        <div class="theme">
+        </div>
+        <div class="drop">
+        </div>
+      </div>
+      <div class="content inpad">
+      </div>
+    </div>
+  </div>
+  <div class="small">
+    <div class="section full line">
+      <ul>
+      </ul>
+    </div>
+    <div class="section line full">
+      @Html.Partial("_Social")
+    </div>
+  </div>
+</div>

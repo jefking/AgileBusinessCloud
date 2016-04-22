@@ -1,0 +1,33 @@
+﻿@model Abc.Services.Contracts.PayPalPaymentConfirmation
+@{
+  ViewBag.Title = "Purchase Complete | ABC";
+  Layout = "~/Views/Shared/Layouts/_InsightsLayout.cshtml";
+}
+@if (Model.Successful)
+{
+  <div class="bar-notice notice-sucess line">
+    Thank you for your payment, please create an application and start logging! <span></span>
+  </div>
+  <div class="manager-controls line">
+    <a href="/Apps/Details?appId=00000000-0000-0000-0000-000000000000" class="button-normal white round"><span class="ui-icon ui-icon-circle-plus"></span>Create Application</a>
+  </div>
+}
+else
+{
+  <div class="bar-notice notice-error line">
+    We were unable to validate your payment, please contact us to validate that you payment was successful.<span></span></div>
+}
+<div class="section application-purchase-completed">
+  <div class="x2 main">
+    <div class="content inpad">
+      <h1 class="custom-widgets-title">Purchase Completed</h1>
+      <ul>
+        <li>@Model.Gross</li>
+        <li>@Model.PaymentStatusFromPayPal</li>
+        <li>@Model.Custom</li>
+      </ul>
+
+      <p>With your new purchase, you're now able to add more logging applications to your dashboard.</p>
+    </div>
+  </div>
+</div>

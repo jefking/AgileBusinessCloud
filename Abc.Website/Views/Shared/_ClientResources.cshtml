@@ -1,0 +1,21 @@
+﻿<h3 class="bopad">
+    More Amazing Insights!</h3>
+<ul>
+    @if (ViewBag.CanCreateAnApplication)
+    {
+        <li><span class="ui-icon ui-icon-plus"></span><a href="/Apps/Details?appId=00000000-0000-0000-0000-000000000000">Create Application Identifier</a></li>
+    }
+    else if (User.Identity.IsAuthenticated)
+    {
+        <li><span class="ui-icon ui-icon-grip-dotted-vertical"></span>@Html.ActionLink("Your Applications", "Application", "Apps")</li>
+    }
+    else
+    {
+        <li><span class="ui-icon ui-icon-grip-dotted-vertical"></span>@Html.ActionLink("Sign In", "LogOn", "Account")</li>
+    }
+    <li><span class="ui-icon ui-icon-help"></span>@Html.ActionLink("Help", "Index", "Help")</li>
+    <li><span class="ui-icon ui-icon-help"></span>@Html.ActionLink("Amazing Insights", "AmazingInsights", "Help")</li>
+    <li><span class="ui-icon ui-icon-help"></span>@Html.ActionLink("Amazing Insights Collector", "AmazingInsightsCollector", "Help")</li>
+    <li><span class="ui-icon ui-icon-wrench"></span>@Html.ActionLink("Application Configuration", "Configuration", "Help")</li>
+    <li><span class="ui-icon ui-icon-mail-closed"></span><a href="mailto:support@agilebusinesscloud.com" target="_blank">Support</a></li>
+</ul>

@@ -1,0 +1,65 @@
+﻿@using Abc.Website;
+@{
+    ViewBag.Title = "Partners | ABC";
+}
+<h1 class="custom-widgets-title no-topad">
+    Our Partners</h1>
+<div class="section">
+    <div class="small x2">
+        <p>
+            As well as providing custom software development for our clients, we also enable
+            deeper relationships through our Partner program. We join with companies to provide
+            them with libraries of code which are tailored to meet engineering challenges commonly
+            found in Cloud computing.</p>
+        <p>
+            Having been in development for over a year, we have developed a set of robust patterns
+            which gives our clients a leading edge in developing any .NET solution o Windows
+            Azure.</p>
+        <div class="section">
+            <div class="ImageLarge">
+                <a href="http://www.microsoft.com" target="_blank">
+                    <img style="width: 500px" src="@Url.ContentCdn("~/content/images/Microsoft-SilverPartner-ISV.png")" alt="Microsoft Coporation, Silver Partner - ISV" />
+                </a>
+            </div>
+        </div>
+        <p>
+            The Microsoft Partner Network is a community that helps Microsoft partners to reach
+            their full potential. Working together, Microsoft and our partners can continue to focus on creating innovative
+            solutions that drive profitability and sustain competitive advantage.</p>
+        <p>
+            Today, 640,000 Microsoft partners form one of the most active, diverse networks
+            in the world, with vast opportunities to build trusted relationships with their
+            customers. The Microsoft Partner Network vision is to provide partners:</p>
+        <ul class="circle-list" style="margin-left: 50px;">
+            <li>Opportunities to strengthen capabilities.</li>
+            <li>Expertise to help serve customers better.</li>
+            <li>Communities that spark innovation and connection.</li>
+        </ul>
+        <div class="ImageLarge">
+            <a href="http://manteo.ca/" target="_blank">
+                <img src="@Url.ContentCdn("~/content/images/manteo_logo.jpg")" alt="Manteo Group of Companies" /></a></div>
+        <p>
+            We have partnered with Manteo, which provides us the ability for entire cloud solutions,
+            when the use of traditional servers and infrastructure are needed to be scaled up
+            or built out, onsite or offsite.</p>
+        <p>
+            Manteo has had long-term successes in bringing excellent service and enterprise
+            hardware through partnerships with a network of vendors. Their core competencies
+            align with more computing infrastructure and security. Providing the best hardware
+            equipment and servicing for their many clients. Through these long-term relationships
+            with their vendors they are able to provide highly competitive pricing on these
+            very robust solutions.</p>
+    </div>
+    <div class="small">
+        <div class="section line full">
+            @Html.Partial("_Social")
+        </div>
+        <div class="section line full">
+            <a href="http://www.microsoft.com/bizspark/" title="Microsoft BizSpark" target="_blank">
+                <img style="width: 200px" alt="Microsoft BizSpark" src="@Url.ContentCdn("~/content/images/BizSpark_StartUp.jpg")" /></a>
+        </div>
+        <div class="section line full">
+            @Html.Partial("_WCG")
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+﻿@{
+  ViewBag.Title = "Application Information | ABC";
+}
+@if (ViewBag.CanCreateAnApplication)
+{
+  <div class="bar-notice notice-info">
+    You have available applications!<span></span></div>
+}
+else if (User.Identity.IsAuthenticated)
+{
+  <div class="bar-notice notice-general">
+    You can another application at any time. Add new applications to enable logging from multiple applications or environments.<span></span></div>
+}
+<div class="content application-developer">
+  <div class="section full">
+    <div class="tiny x3">
+      <div class="panel">
+        <div class="title">
+          <h4>Amazing Insights Integration Examples</h4>
+          <div class="theme">
+          </div>
+          <div class="drop">
+          </div>
+        </div>
+        <div class="content inpad">
+          <h3>Messages</h3>
+          <div class="inpad">
+            <code>
+              <pre>Trace.Write("Log message.");</pre>
+            </code>
+          </div>
+          <h3>MVC</h3>
+          <div class="inpad">
+            <code>
+              <pre>[MvcPerformanceMonitor]</pre>
+            </code>
+          </div>
+          <h3>WCF</h3>
+          <div class="inpad">
+            <code>
+              <pre>[WcfPerformanceMonitor]</pre>
+            </code>
+          </div>
+          <h3>Performance</h3>
+          <div class="inpad">
+            <code>
+              <pre>using (new PerformanceMonitor())
+{
+  ...your code here
+}</pre>
+            </code>
+          </div>
+          <h3>Exceptions</h3>
+          <div class="inpad">
+            <code>
+              <pre>try {
+  ...your code here
+} catch (Exception ex) {
+  var log = new Logger();
+  log.Log(ex);
+}</pre>
+            </code>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tiny">
+      @Html.Partial("_ClientResources")
+      <br />
+      @Html.Partial("_Social")
+      <br />
+      @Html.Partial("_Libraries")
+    </div>
+  </div>
+</div>

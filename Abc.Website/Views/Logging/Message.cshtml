@@ -1,0 +1,66 @@
+﻿@using Abc.Website;
+@using Abc.Services.Contracts;
+@using System.Collections;
+@using System.Linq;
+@model Abc.Website.Models.ManagementModel
+@{
+    ViewBag.Title = "Messages > " + Model.Application.Name + " > " + Model.Application.Environment + " | ABC";
+    int count = ((IEnumerable<MessageDisplay>)this.Model.Data).Count();
+}
+<h1 class="custom-widgets-title no-topad">@Model.Application.Name &gt; @Model.Application.Environment
+    &gt; Messages</h1>
+<p>@Model.Application.Description</p>
+@if (Model.Data != null && 0 < count)
+{
+    <div id="wrapper content">
+        <table id="loggingData" class="table-normal table-sortable DataLayout no-margin logs performance-logs"
+            summary="Logging, Application Messages">
+            <thead>
+                <tr>
+                    <th class="size5of5">
+                        Date
+                    </th>
+                    <th class="size5of5">
+                        Server
+                    </th>
+                    <th class="size4of5">
+                        Description
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (MessageDisplay item in Model.Data)
+                {
+                    string open = count > 1 ? string.Format("window.open('?identifier={0}&key={1}')", item.Identifier, Model.Application.PublicKey) : string.Empty;
+                    <tr onclick="@open">
+                        <td class="time" nowrap>@TimeZoneInfo.ConvertTime(item.OccurredOn, this.Model.Preference.TimeZone).ToString("yyyy-MM-dd hh:mm tt")
+                        </td>
+                        <td nowrap>@item.MachineName
+                            @if (!string.IsNullOrWhiteSpace(item.DeploymentId))
+                            {
+                                <br />
+                                <strong>Deployment:</strong> @item.DeploymentId<br />
+                            }
+                        </td>
+                        <td class="description">
+                            <em>@item.Message</em>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+  <p class="italic x-small">* Data presented was collected during the past week; the 2,500 most recent entries.</p>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            $('#loggingData').dataTable({
+                "aaSorting": []
+            });
+        });
+    </script>
+}
+else
+{
+    <div class="bar-notice notice-warning">
+        No messages have been logged.<span></span></div>
+}

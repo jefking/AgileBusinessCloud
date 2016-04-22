@@ -1,0 +1,45 @@
+﻿@using Abc.Website;
+@{
+    string currentAction = this.ViewContext.RouteData.GetRequiredString("action").ToLowerInvariant();
+    string currentController = this.ViewContext.RouteData.GetRequiredString("controller").ToLowerInvariant();
+    string messageCurrent = currentAction == "message" && currentController == "logging" ? "current" : string.Empty;
+    string errorCurrent = currentAction == "error" && currentController == "logging" ? "current" : string.Empty;
+    string serverCurrent = currentAction.ToLowerInvariant().StartsWith("collector") && currentController == "logging" ? "current" : string.Empty;
+    string performanceCurrent = currentAction.ToLowerInvariant().StartsWith("performance") && currentController == "logging" ? "current" : string.Empty;
+    string configurationCurrent = currentController == "management" ? "current" : string.Empty;
+}
+<div id="widgets" class="clearfix">
+    <ul class="dash-nav-cols">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <li class="@messageCurrent"><a href="/Logging/Message" title="Messages">
+                <img src="@Url.ContentCdn("~/content/images/icons/back-widget-support.png")" alt="Application Messages" />
+                <span>Messages</span> </a></li>
+            <li class="@performanceCurrent"><a href="/Logging/PerformanceChart" title="Performance">
+                <img src="@Url.ContentCdn("~/content/images/icons/back-widget-analytics.png")" alt="Application Performance Metrics" />
+                <span>Performance</span> </a></li>
+            <li class="@errorCurrent"><a href="/Logging/ErrorChart" title="Errors">
+                <img src="@Url.ContentCdn("~/content/images/icons/back-widget-bugs.png")" alt="Application Errors" />
+                <span>Errors</span> </a></li>
+            <li class="@serverCurrent"><a href="/Logging/CollectorBrief" title="Server Usage Statistics">
+                <img src="@Url.ContentCdn("~/content/images/icons/back-widget-radar.png")" alt="Server Utilization Statistics" />
+                <span>Server</span> </a></li>
+        }
+        else
+        {
+            <li class="@messageCurrent"><a href="/Account/LogOn" title="Messages">
+                <img src="@Url.ContentCdn("~/content/images/icons/back-widget-support.png")" alt="Application Messages" />
+                <span>Messages</span> </a></li>
+            <li class="@performanceCurrent"><a href="/Account/LogOn" title="Performance">
+                <img src="@Url.ContentCdn("~/content/images/icons/back-widget-analytics.png")" alt="Application Performance Metrics" />
+                <span>Performance</span> </a></li>
+            <li class="@errorCurrent"><a href="/Account/LogOn" title="Errors">
+                <img src="@Url.ContentCdn("~/content/images/icons/back-widget-bugs.png")" alt="Application Errors" />
+                <span>Errors</span> </a></li>
+            <li class="@serverCurrent"><a href="/Account/LogOn" title="Server Usage Statistics">
+                <img src="@Url.ContentCdn("~/content/images/icons/back-widget-radar.png")" alt="Server Utilization Statistics" />
+                <span>Server</span> </a></li>
+        }
+    </ul>
+    @Html.Partial("_RealTimeGraph")
+</div>

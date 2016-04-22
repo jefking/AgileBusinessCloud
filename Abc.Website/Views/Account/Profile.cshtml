@@ -1,0 +1,168 @@
+﻿@using Abc.Website
+@model Abc.Website.Models.UserProfile
+@{
+  ViewBag.Title = string.Format("{0} | ABC", Model.UserName);
+  var email = User.Identity.EmailAddress();
+}
+@if (string.IsNullOrWhiteSpace(Model.AbcHandle))
+{
+  <div class="bar-notice notice-warning">
+    Please create a public profile! By entering a public profile, your tweets and GitHub activity will be publically accessible.<span></span></div>
+}
+<div class="account-my-profile">
+  <h1 class="custom-widgets-title no-topad">@Model.UserName</h1>
+  <div id="content">
+    <div class="section line full">
+      <div class="large">
+        <div class="section section-user">
+          <table class="table-clean full">
+            <tr>
+              <td rowspan="4">
+                @if (!string.IsNullOrWhiteSpace(@Model.Gravatar))
+                {
+                  <a href="https://en.gravatar.com/site/signup/" target="_blank">
+                    <img src="http://www.gravatar.com/avatar/@Model.Gravatar?s=100" title="Click to add or edit your Gravatar!"></a>
+                }
+                else
+                {
+                  <img src="//cdn.agilebusinesscloud.com/content/images/icons/unknown-user.jpg" height="50" width="50" title="Enter your email to enable a Gravatar!" />
+                }
+              </td>
+            </tr>
+            <tr>
+              <td>
+                @if (!string.IsNullOrWhiteSpace(email))
+                {
+                  <div class="unit size1of3">
+                    <em>Login Email</em>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (!string.IsNullOrWhiteSpace(email))
+                {
+                  <div class="unit size2of3">
+                    <a href="mailto:@email" title"Email @Model.UserName">@email</a></div>
+                }
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="unit size1of3">
+                  <em>Applications</em>
+                </div>
+              </td>
+              <td>
+                <div class="unit size2of3">@Model.MaximumAllowedApplications</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="unit size1of3">
+                  <em>Member Since</em>
+                </div>
+              </td>
+              <td>
+                <div class="unit size2of3">@Model.CreatedOn.ToString("yyyy-MM-dd")</div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="section section-apps">
+          <h2 class="custom-widgets-title no-topad">My Applications</h2>
+          <ul class="applications-list component" modelsource="abc.profile.Applications">
+            {{#Environments}}
+            <li>
+              <h3>{{EnvironmentName}}</h3>
+              <ol class="apps">
+                {{#Apps}}
+                <li><span class="ui-icon ui-icon-triangle-1-e"></span><a href="#" title="{{Identifier}}">{{Name}}</a></li>
+                {{/Apps}}
+              </ol>
+            </li>
+            {{/Environments}} {{^Environments}}
+            <li class="no-data"><span class="ui-icon ui-icon-info"></span>No applications found. Would you like to <a href="/Apps/Details?appId=00000000-0000-0000-0000-000000000000" title="Create an application">Create an application?</a></li>
+            {{/Environments}}
+          </ul>
+        </div>
+      </div>
+      <div class="large">
+        @using (Html.BeginForm())
+        {
+          <div class="section section-profile-info">
+            <div class="line">
+              <div class="unit size1of3">
+                @if (!string.IsNullOrWhiteSpace(Model.AbcHandle))
+                {
+                  <em>@Html.ActionLink("Public Profile", Model.AbcHandle, "Profile")</em>
+                }
+                else
+                {
+                  <em>Public Profile</em>
+                }
+              </div>
+              <div class="unit size2of3">@Html.TextBoxFor(u => u.AbcHandle, Model.AbcHandle)</div>
+            </div>
+            <div class="line">
+              <div class="unit size1of3">
+                <em>User Name</em></div>
+              <div class="unit size2of3">
+                @Html.TextBoxFor(u => u.UserName, Model.UserName)</div>
+            </div>
+            <div class="line">
+              <div class="unit size1of3">
+                <em>Email</em></div>
+              <div class="unit size2of3">
+                @Html.TextBoxFor(u => u.Email, Model.Email)</div>
+            </div>
+            <div class="line">
+              <div class="unit size1of3">
+                @if (!string.IsNullOrWhiteSpace(Model.TwitterHandle))
+                {
+                  <em>@Html.ActionLink("Twitter", "Twitter", "Account")</em>
+                }
+                else
+                {
+                  <em title="Just provide your Twitter Handle.">Twitter</em>
+                }
+              </div>
+              <div class="unit size2of3">
+                @@@Html.TextBoxFor(u => u.TwitterHandle, Model.TwitterHandle)</div>
+            </div>
+            <div class="line">
+              <div class="unit size1of3">
+                @if (!string.IsNullOrWhiteSpace(Model.GitHubHandle))
+                {
+                  <em>@Html.ActionLink("GitHub", "GitHub", "Account")</em>
+                }
+                else
+                {
+                  <em title="Just provide your GitHub user name.">Github</em>
+                }
+              </div>
+              <div class="unit size2of3">@Html.TextBoxFor(u => u.GitHubHandle, Model.GitHubHandle)</div>
+            </div>
+            <div class="line">
+              <div class="unit size1of3">
+                <em>Time Zone</em></div>
+              <div class="unit size2of3">@Html.DropDownListFor(u => u.TimeZone.Id, Model.TimeZones)</div>
+            </div>
+            <div class="line">
+              <div class="unit size1of3">
+                <em>City</em></div>
+              <div class="unit size2of3">@Html.TextBoxFor(u => u.City, Model.City)</div>
+            </div>
+            <div class="line">
+              <div class="unit size1of3">
+                <em>Country</em></div>
+              <div class="unit size2of3">@Html.TextBoxFor(u => u.Country, Model.Country)</div>
+            </div>
+            <div class="section full">
+              <input type="submit" class="button-normal light-green btn-save" value="Save" />
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+﻿@using Abc.Website;
+@using Abc.Services.Contracts;
+@using System.Linq;
+@model Abc.Website.Models.ManagementModel
+@{
+    ViewBag.Title = "Server Utilization Statistics > " + Model.Application.Name + " > " + Model.Application.Environment + " | ABC";
+    int count = ((IEnumerable<ServerStatisticSetDisplay>)this.Model.Data).Count();
+}
+<h1 class="custom-widgets-title no-topad">@Model.Application.Name &gt; @Model.Application.Environment
+    &gt; Server Utilization Statistics</h1>
+<p>@Model.Application.Description</p>
+@if (Model.Data != null && 0 < count)
+{
+    <div id="wrapper content">
+        <table id="loggingData" class="table-normal table-sortable DataLayout table-normal no-margin logs performance-logs"
+            summary="Logging, Server Usage Statistics">
+            <thead>
+                <tr>
+                    <th class="size1of5">
+                        Date
+                    </th>
+                    <th class="size1of5">
+                        Server
+                    </th>
+                    <th class="size1of5">
+                        CPU %
+                    </th>
+                    <th class="size1of5">
+                        Memory %
+                    </th>
+                    <th class="size1of5">
+                        IO %
+                    </th>
+                    <th class="size1of5" nowrap>
+                        NIC 1 %
+                    </th>
+                    <th class="size1of5" nowrap>
+                        NIC 2 %
+                    </th>
+                    <th class="size1of5" nowrap>
+                        NIC 3 %
+                    </th>
+                    <th class="size1of5" nowrap>
+                        NIC 4 %
+                    </th>
+                </tr>
+            </thead>
+            @foreach (ServerStatisticSetDisplay item in this.Model.Data)
+            {
+                string open = count > 1 ? string.Format("window.open('?identifier={0}&key={1}')", item.Identifier, Model.Application.PublicKey) : string.Empty;
+                <tr onclick="@open">
+                    <td class="time">@TimeZoneInfo.ConvertTime(item.OccurredOn, this.Model.Preference.TimeZone).ToString("yyyy-MM-dd hh:mm tt")
+                    </td>
+                    <td>@item.MachineName
+                        @if (!string.IsNullOrWhiteSpace(item.DeploymentId))
+                        {
+                            <br />
+                            <strong>Deployment:</strong> @item.DeploymentId<br />
+                        }
+                    </td>
+                    <td>@item.CpuUsagePercentage
+                    </td>
+                    <td>@item.MemoryUsagePercentage
+                    </td>
+                    <td>@item.PhysicalDiskUsagePercentage
+                    </td>
+                    @if (null != item.NetworkPercentages)
+                    {
+                        for (int i = 0; i < 4; i++)
+                        {
+                            if (item.NetworkPercentages.Count() > i && null != item.NetworkPercentages[i])
+                            {
+                        <td>
+                            @item.NetworkPercentages[i]
+                        </td>
+                            }
+                            else
+                            {
+                        <td>
+                            -
+                        </td>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+  <p class="italic x-small">* Data presented was collected during the past week; the 2,500 most recent entries.</p>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            $('#loggingData').dataTable({
+                "aaSorting": [[0, "desc"]]
+            });
+        });
+    </script>
+}
+else
+{
+    <div class="bar-notice notice-warning">
+        No service usage statistics have been logged.<span></span></div>
+}

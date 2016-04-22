@@ -1,0 +1,44 @@
+﻿@using Abc.Website;
+<div class="decorator">
+  <div class="container">
+    <div class="row">
+      <div class="span4 company-pages">
+        <div class="gutter">
+          <h3 class="bopad">Company</h3>
+          <ul>
+            <li><a href="/Home/About" title="ABC Team">Team</a></li>
+            <li><a href="/Home/Investors" title="Investor Relations | ABC">Investors</a></li>
+            <li><a href="/Home/TermsOfUse" title="Terms of Use | ABC">Terms of Use</a></li>
+            <li class="last"><a href="/Home/PrivacyPolicy" title="Privacy Policy | ABC">Privacy Policy</a></li>
+            <li><a href="/Home/SiteMap" title="Site Map| ABC">Site Map</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="span4 company-initiatives">
+        <div class="gutter">
+          <h3 class="bopad">Initiatives</h3>
+          <ul>
+            <li>@Html.ActionLink("Open Source", "OpenSource", "Home")</li>
+            <li>@Html.ActionLink("Amazing Insights", "AmazingInsights", "Home")</li>
+            <li>@Html.ActionLink("Amazing Insights Collector", "AmazingInsightsCollector", "Home")</li>
+            <li class="last"><a href="http://www.codestorm.in" title="CodeStorm - Social DevOps">CodeStorm</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="span4 lastUnit">
+        <div class="gutter">
+          @Html.Partial("_Social")
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container footer-copyright">
+  <div class="gutter">
+    <span class="copyright">&copy; 2012 Agile Business Cloud Solutions Ltd. All rights reserved.</span>
+    <div class="btn-microsoft-partner">
+      <a href="//www.microsoft.com" title="Microsoft" target="_blank">
+        <img src="@Url.ContentCdn("~/content/images/btn-microsoft-partner.png")" alt="Microsoft Silver Partnership" /></a>
+    </div>
+  </div>
+</div>

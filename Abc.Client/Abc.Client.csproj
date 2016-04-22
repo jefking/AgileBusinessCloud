@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA4850B6-BD9C-4924-8BE2-ACFB41198AD0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abc.Client</RootNamespace>
+    <AssemblyName>Abc.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>True</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Abc.Datum.Client\Enums.cs">
+      <Link>Logging\Enums.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\ExtensionMethods.cs">
+      <Link>Logging\ExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\Logger.cs">
+      <Link>Logging\Logger.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\MessageHandler.cs">
+      <Link>Logging\MessageHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\PerformanceMonitor.cs">
+      <Link>Logging\PerformanceMonitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\Proxy.cs">
+      <Link>Logging\Proxy.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\TraceListener.cs">
+      <Link>Diagnostics\TraceListener.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Global\Configuration\AppSettingsAdaptor.cs">
+      <Link>Configuration\AppSettingsAdaptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Global\Text\Ascii85.cs">
+      <Link>Text\Ascii85.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Global\Azure\AzureEnvironment.cs">
+      <Link>Azure\AzureEnvironment.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Global\Configuration\ConfigurationAdaptorContract.cs">
+      <Link>Configuration\ConfigurationAdaptorContract.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Global\Configuration\ConfigurationAdaptorOrder.cs">
+      <Link>Configuration\ConfigurationAdaptorOrder.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\Configuration\ConfigurationSettings.cs">
+      <Link>Configuration\ConfigurationSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Global\Convert.cs" />
+    <Compile Include="..\Abc.Global\ExtensionMethods.cs" />
+    <Compile Include="..\Abc.Global\Collections\FirstInFirstOut.cs">
+      <Link>Collections\FirstInFirstOut.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Global\Configuration\IConfigurationAdaptor.cs">
+      <Link>Configuration\IConfigurationAdaptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\Web\MvcPerformanceMonitorAttribute.cs">
+      <Link>Web\MvcPerformanceMonitorAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Global\Diagnostics\PerformanceMonitor.cs">
+      <Link>Diagnostics\PerformanceMonitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Global\Diagnostics\Session.cs">
+      <Link>Diagnostics\Session.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Global\Collections\PriorityCollection.cs">
+      <Link>Collections\PriorityCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\Service References\Datum\Reference.cs">
+      <Link>Logging\Reference.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Global\Azure\Configuration\RoleEnvironmentAdaptor.cs">
+      <Link>Configuration\RoleEnvironmentAdaptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Global\Azure\Configuration\RoleEnvironmentConfiguration.cs">
+      <Link>Configuration\RoleEnvironmentConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Global\Azure\Configuration\ServerConfiguration.cs">
+      <Link>Configuration\ServerConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\Configuration\ServerConfigurationAdaptor.cs">
+      <Link>Configuration\ServerConfigurationAdaptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Global\Configuration\Settings.cs">
+      <Link>Configuration\Settings.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\Web\WcfPerformanceMonitor.cs">
+      <Link>Web\WcfPerformanceMonitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\Web\WcfPerformanceMonitorAttribute.cs">
+      <Link>Web\WcfPerformanceMonitorAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\Instrumentation\PerformanceCounterNames.cs">
+      <Link>Instrumentation\PerformanceCounterNames.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\Instrumentation\Counter.cs">
+      <Link>Instrumentation\Counter.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\Instrumentation\NetworkCounter.cs">
+      <Link>Instrumentation\NetworkCounter.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\Instrumentation\Enums.cs">
+      <Link>Instrumentation\Enums.cs</Link>
+    </Compile>
+    <Compile Include="..\Abc.Datum.Client\Instrumentation\Sampler.cs">
+      <Link>Instrumentation\Sampler.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Abc.Underpinning.Client">
+      <HintPath>..\..\..\3rd Party\Underpinning\Client\Abc.Underpinning.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.WindowsAzure.StorageClient, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\3rd Party\MVC\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

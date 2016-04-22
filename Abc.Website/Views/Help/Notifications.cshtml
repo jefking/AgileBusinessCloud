@@ -1,0 +1,118 @@
+﻿@using Abc.Website;
+@{
+  ViewBag.Title = "Amazing Insights Collector Notifications | ABC";
+  Layout = "~/Views/Shared/Layouts/_InsightsLayout.cshtml";
+}
+@Html.Partial("_AppNotifications")
+<div class="content help-amazing-insight-collector-page">
+  <div class="section full">
+    <div class="tiny x3">
+      <h1 class="custom-widgets-title no-topad">Help > Amazing Insights Collector > Notifications</h1>
+      <div class="section line full">
+        <p>When viewing data from Amazing Insights Collector you may see alert bars when your server thresholds reach certain limits. The numbers expressed are from industry standards which are listed below. </p>
+        <div class="widget-tabs-horizontal">
+          <ul class="widget-tabs-box clearfix">
+            <li class="current"><a href="#" rel="content_test_01">CPU</a></li>
+            <li class=""><a href="#" rel="content_test_02">Memory</a></li>
+            <li class=""><a href="#" rel="content_test_03">Disk IO</a></li>
+            <li class=""><a href="#" rel="content_test_04">Network IO (NIC)</a></li>
+          </ul>
+          <div class="widget-tabs-content inpad">
+            <div id="content_test_01" class="tabs-content current">
+              <table class="table-clean no-margin" summary="Central Processing Unit">
+                <thead>
+                  <tr>
+                    <th scope="col">Percentage </th>
+                    <th scope="col" nowrap>Severity </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>90% </td>
+                    <td>Critical </td>
+                  </tr>
+                  <tr>
+                    <td>60% </td>
+                    <td>Warning </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="content_test_02" class="tabs-content">
+              <table class="table-clean no-margin" summary="Random Access Memory">
+                <thead>
+                  <tr>
+                    <th scope="col">Percentage </th>
+                    <th scope="col" nowrap>Severity </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>95% </td>
+                    <td>Critical </td>
+                  </tr>
+                  <tr>
+                    <td>90% </td>
+                    <td>Warning </td>
+                  </tr>
+                  <tr>
+                    <td>75% </td>
+                    <td>Monitor </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="content_test_03" class="tabs-content">
+              <table class="table-clean no-margin" summary="Physical Disk IO">
+                <thead>
+                  <tr>
+                    <th scope="col">Percentage </th>
+                    <th scope="col" nowrap>Severity </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>65% </td>
+                    <td>Critical </td>
+                  </tr>
+                  <tr>
+                    <td>60% </td>
+                    <td>Monitor </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="content_test_04" class="tabs-content">
+              <table class="table-clean no-margin" summary="Network Interface IO">
+                <thead>
+                  <tr>
+                    <th scope="col">Percentage </th>
+                    <th scope="col" nowrap>Severity </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>65% </td>
+                    <td>Critical </td>
+                  </tr>
+                  <tr>
+                    <td>60% </td>
+                    <td>Monitor </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <p>If you are consistently getting these notifications you should think about scaling vertically or horizontally to ensure that your users are getting the best possible experience.</p>
+      </div>
+    </div>
+    <div class="tiny">
+      @Html.Partial("_ClientResources")
+      <br />
+      @Html.Partial("_Social")
+      <br />
+      @Html.Partial("_Events")
+    </div>
+  </div>
+</div>

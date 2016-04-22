@@ -1,0 +1,46 @@
+﻿@using Abc.Website.Models
+@{
+  ViewBag.Title = "This is who ABC works so hard for.";
+  IEnumerable<UserPublicProfile> profiles = ViewBag.Profiles as IEnumerable<UserPublicProfile>;
+  var newProfiles = (from data in profiles
+                     where DateTime.UtcNow.Date == data.CreatedOn
+                     select data).Count();
+}
+<div class="section full">
+  <h1 class="custom-widgets-title no-topad">@ViewBag.Title</h1>
+  <div class="component component-users">
+    @if (0 < newProfiles)
+    {
+      <div class="bar-notice notice-sucess">@newProfiles Public Profiles added to the site today!<span></span></div>
+    }
+    <div class="tiny x3 main">
+      @if (null != profiles)
+      {
+        <h3 class="bopad">United DevOps > Public Profile Pages</h3>
+        foreach (var profile in profiles)
+        {
+        <div class="tiny">
+          <a href="/Profile/@profile.AbcHandle">
+            @if (string.IsNullOrWhiteSpace(profile.Gravatar))
+            {
+              <img src="//cdn.agilebusinesscloud.com/content/images/icons/unknown-user.jpg" height="100" width="100" title="@profile.UserName's Profile Picture" alt="@profile.UserName's Profile Picture" />
+            }
+            else
+            {
+              <img src="//www.gravatar.com/avatar/@profile.Gravatar?s=100" height="100" width="100" title="@profile.UserName's Profile Picture" alt="@profile.UserName's Profile Picture" />
+            }
+          </a>
+          <ul>
+            <li><a href="/Profile/@profile.AbcHandle">@profile.AbcHandle</a></li>
+            <li>@profile.ApplicationsUsed / @profile.ApplicationsMaximum</li>
+            <li>@profile.City, @profile.Country</li>
+            <li>@profile.CreatedOn</li>
+            <li>@profile.GitHubHandle</li>
+            <li>@profile.UserName</li>
+          </ul>
+        </div>
+        }
+      }
+    </div>
+  </div>
+</div>

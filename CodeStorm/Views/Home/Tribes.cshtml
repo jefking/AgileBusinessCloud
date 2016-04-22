@@ -1,0 +1,37 @@
+﻿@using System.Collections.Generic;
+@{
+  ViewBag.Title = "CodeStorm: Tribes";
+  var profiles = ViewBag.Profiles as IEnumerable<Abc.Website.Models.UserPublicProfile>;
+}
+<div class="band mt25 mb25 page-home">
+  <div class="container">
+    <div class="profiles-gallery">
+      <ul>
+        @if (null != profiles)
+        {
+          foreach (var profile in profiles)
+          {
+
+          <li class="span2">
+            <div class="inner-item">
+              <div>
+                <a href="/DevOp/@profile.AbcHandle" title="@profile.UserName is CodeStorming!">
+                  <img src="//gravatar.com/avatar/@profile.Gravatar?s=100" alt="@profile.UserName is CodeStorming!" class="img-circle">
+                </a>
+              </div>
+              <a href="/DevOp/@profile.AbcHandle"><span class="label label-info">@profile.Word</span>
+              </a>
+              <div class="text">
+                <span><a href="/DevOp/@profile.AbcHandle">@profile.UserName</a></span>
+              </div>
+            </div>
+          </li>
+          }
+        }
+        else
+        {
+          <li>No profiles found.</li>
+        }
+      </ul>
+    </div>
+  </div>

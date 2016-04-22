@@ -1,0 +1,34 @@
+﻿@{
+  ViewBag.Title = "Performance Metrics > " + Model.Application.Name + " > " + Model.Application.Environment + " | ABC";
+}
+<div class="widget-tabs-content inpad page-performance">
+  <h1 class="custom-widgets-title no-topad">@Model.Application.Name &gt; @Model.Application.Environment &gt; Performance Metrics</h1>
+  <p>@Model.Application.Description</p>
+  <div class="component component-performance-class-list">
+    <div class="UIBlock show">
+    </div>
+    <p>Below is a high level overview of the performance occurrences broken down by Class.</p>
+    <ul modelsource="abc.performance.ClassList">
+      {{#Classes}}
+      <li class="{{ClassName}} unit size1of2">
+        <h3 class="class-title">{{Class}}</h3>
+        <span class="count" title="Total Number of Performance Occurrences for this Class">{{Total}}</span> <span class="graph"></span>
+        <div class="methods-wrapper">
+          <ol class="methods">
+            {{#Methods}}
+            <li><span class="method-name">{{Name}}</span> @@ <span class="relative-date">{{RelativeDate}}</span> <span class="duration">{{Duration}}ms</span></li>
+             {{/Methods}}
+          </ol>
+        </div>
+      </li>
+      {{/Classes}} {{^Classes}}
+      <li>Oh no! There doesn't seem to be any performance data on this application in the past 24 hours.</li>
+      {{/Classes}}
+    </ul>
+    <div class="line full">
+      <div class="italic x-small">
+        <p>Graph is data collected over the past 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</div>

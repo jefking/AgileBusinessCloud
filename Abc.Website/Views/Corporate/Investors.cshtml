@@ -1,0 +1,43 @@
+﻿@using Abc.Website;
+@{
+  ViewBag.Title = "Investor Relations | ABC";
+  ViewBag.Keywords = "Investment, Venture Capital, Angel, Cloud Computing, ABC";
+  ViewBag.Description = "ABC is currently engaged in fostering investor relations.";
+  if (!User.Identity.IsAuthenticated) { Layout = "~/Views/Shared/Layouts/_CorporateLayout.cshtml"; }
+}
+@Html.Partial("_CorporateHero")
+<div class="content-container">
+  <div class="container">
+    <div class="row">
+      <div class="span8">
+        <h1>Investor Relations</h1>
+        <div class='angellist_embed' data-startup_id='111402'>
+        </div>
+        <h3 class="custom-widgets-title">Investment Stage</h3>
+        <p>ABC is currently engaged in fostering investor relations. We are on the verge of growth.</p>
+        <h3 class="custom-widgets-title">Contact Us</h3>
+        <p>For more information, contact our investment specialist and CFO George Danes <a href="mailto:george@agilebusinesscloud.com">george@agilebusinesscloud.com</a> or call 778.387.8087.</p>
+      </div>
+      <div class="span4">
+        <div class="unit" style="text-align: center">
+          <a href="/Home/About" title="Jef King">
+            <img src="@Url.ContentCdn("~/content/images/JefKingSmall.jpg")" alt="Jef King" /></a>
+          <br />
+          Jef King
+        </div>
+        <div class="unit" style="text-align: center">
+          <a href="/Home/About" title="George Danes">
+            <img src="@Url.ContentCdn("~/content/images/GeorgeDanesSmall.jpg")" alt="George Danes" /></a>
+          <br />
+          George Danes
+        </div>
+        <div class="unit" style="text-align: center">
+          <a href="/Home/About" title="Jaime Bueza">
+            <img src="@Url.ContentCdn("~/content/images/JaimeBuezaSmall.jpg")" alt="Jaime Bueza" /></a>
+          <br />
+          Jaime Bueza
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type='text/javascript' src='https://angel.co/abc-16/embed/angellist.js'></script>

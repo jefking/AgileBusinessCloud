@@ -1,0 +1,37 @@
+﻿@using Abc.Website;
+@{ ViewBag.Title = "Application Settings"; }
+<h1 class="custom-widgets-title no-topad">@ViewBag.Title</h1>
+<div class="component component-application-settings">
+  <div class="line">
+    <div class="size2of3 unit">
+      <div class="content-wrapper">
+        <div class="config-info">
+          <div class="bar-notice">
+          </div>
+          <h2>Current Settings</h2>
+          <dl class="mojoTemplate" modelsource="abc.application.settings">
+            <dt class="hd">Key</dt>
+            <dd class="hd">Value</dd>
+            {{#Configs}}
+            <dt><a href="#" title="{{Key}}" class="btn-key">{{Key}}</a></dt>
+            <dd>
+              <input type="text" value="{{Value}}" name="{{Key}}" placeholder="Please enter a value" /></dd>
+            {{/Configs}}
+          </dl>
+          <a href="#" class="btn-save button-normal green round">Save Settings</a>
+        </div>
+        <textarea readonly class="hide"></textarea>
+      </div>
+    </div>
+    <div class="size1of3 unit">
+      <div class="drop-zone-container">
+        <div class="drop-zone">
+          <h2>Upload new config</h2>
+        </div>
+        <p>...because sometimes it's faster to just drag an app configuration xml into this
+          box!</p>
+        <p>We use the HTML5 File API to read your configuration files (XML or CSCFG)</p>
+      </div>
+    </div>
+  </div>
+</div>

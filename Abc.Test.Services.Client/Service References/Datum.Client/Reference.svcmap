@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a72e5de6-2075-4ca6-b69d-ab845749a199" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8002/Datum.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Datum.xsd" MetadataType="Schema" ID="d314f818-9737-4fb5-a413-85f8d9038741" SourceId="1" SourceUrl="http://localhost:8002/Datum.svc?xsd=xsd1" />
+    <MetadataFile FileName="Datum1.xsd" MetadataType="Schema" ID="6ed651b3-925c-4966-82ca-dd9ae3285c4d" SourceId="1" SourceUrl="http://localhost:8002/Datum.svc?xsd=xsd2" />
+    <MetadataFile FileName="Datum2.xsd" MetadataType="Schema" ID="7a26845e-7aa3-4a71-9873-936aaaef5390" SourceId="1" SourceUrl="http://localhost:8002/Datum.svc?xsd=xsd0" />
+    <MetadataFile FileName="Datum.disco" MetadataType="Disco" ID="ab3b5187-52dd-4e86-b83d-432cd6783e27" SourceId="1" SourceUrl="http://localhost:8002/Datum.svc?disco" />
+    <MetadataFile FileName="Datum3.xsd" MetadataType="Schema" ID="996cc655-c72a-4d8f-bb20-3e4d804195d8" SourceId="1" SourceUrl="http://localhost:8002/Datum.svc?xsd=xsd3" />
+    <MetadataFile FileName="Datum.wsdl" MetadataType="Wsdl" ID="8d662371-dda3-4924-b4b1-f70775374ed8" SourceId="1" SourceUrl="http://localhost:8002/Datum.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

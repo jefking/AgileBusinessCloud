@@ -1,0 +1,32 @@
+﻿/* TEAM */
+CEO: Jef King
+Site: http://www.agilebusinesscloud.com/Home/About
+GitHub: //github.com/jefkingabc
+Twitter: @JefKingABC
+Location: Vancouver, British Columbia, Canada
+
+CXO: Jaime Bueza
+Site: http://www.agilebusinesscloud.com/Home/About
+GitHub: //github.com/jbueza
+Twitter: @JaimeBuezaABC
+Location: Vancouver, British Columbia, Canada
+
+CFO: George Danes
+Site: http://www.agilebusinesscloud.com/Home/About
+Twitter: @GeorgeDanesABC
+Location: Vancouver, British Columbia, Canada
+
+/* THANKS */
+Parents: Mom & Dad
+Company: Agile Business Cloud Solutions Ltd. http://www.agilebusinesscloud.com
+Product: CodeStorm http://codestorm.in
+Microsoft: http://www.microsoft.com
+Google: http://www.google.com
+RESAAS: http://www.resaas.com
+Manteo: http://manteo.ca/
+
+/* SITE */
+Last update: 2012/05/30
+Standards: HTML5, CSS3, JavaScript, XHTML, XML, PNG, GIF, JPG, W3C, REST, AJAX
+Components: Google Analytics, Google Fonts, ChromeFrame, Smoothie, Mojo, JQuery, Windows Azure Access Control Service
+Software: Windows Azure, Visual Studio, NotePad, Chrome, Windows, Internet Explorer, FireFox, MVC 3 Razor, .NET, FireBug

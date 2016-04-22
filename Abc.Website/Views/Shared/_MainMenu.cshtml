@@ -1,0 +1,66 @@
+﻿@using Abc.Website
+@using Abc.Configuration
+@using Abc.Services
+<ul class="toolbar-menu-list">
+  @if (User.Identity.IsAuthenticated)
+  {
+    var DisplayName = string.IsNullOrWhiteSpace(User.Identity.Name) ? "Profile" : User.Identity.Name;
+    <li><a href="/Account/Profile" class="component-user-plate"><span class="user-icon" data-email="@User.Identity.EmailAddress()"></span>@DisplayName</a>
+      <ul>
+        @if (User.Identity.IsManager())
+        {
+          <li><span class="ui-icon ui-icon-star"></span>@Html.ActionLink("Staff", "Index", "Staff")</li>
+        }
+        <li><span class="ui-icon ui-icon-star"></span>@Html.ActionLink("Profile", "Profile", "Account")</li>
+        <li><span class="ui-icon ui-icon-help"></span>@Html.ActionLink("Help", "Index", "Help")</li>
+        <li class="btn-logout"><span class="ui-icon ui-icon-power"></span>@Html.ActionLink("Sign Out", "LogOff", "Account")</li>
+      </ul>
+    </li>
+    <li>@Html.ActionLink("Applications", "Application", "Apps")
+      <ul class="applications-menu-list component" modelsource="abc.menu.Applications">
+        {{#Environments}}
+        <li>
+          <h3>{{EnvironmentName}}</h3>
+          <ol class="apps">
+            {{#Apps}}
+            <li class="app"><span class="ui-icon ui-icon-grip-dotted-vertical"></span><a href="#" title="{{Identifier}}" data-PublicKey="{{PublicKey}}">{{Name}}</a></li>
+            {{/Apps}}
+          </ol>
+        </li>
+        {{/Environments}} {{^Environments}}
+        <li class="no-data"><span class="ui-icon ui-icon-info"></span>No applications found. Would you like to <a href="/Apps/Details?appId=00000000-0000-0000-0000-000000000000" title="Create an application">Create an application?</a></li>
+        {{/Environments}}
+        <li class="btn-refresh"><span class="ui-icon ui-icon-refresh"></span></li>
+      </ul>
+    </li>
+    <li>@Html.ActionLink("Blog", "Index", "Blog")
+      <ul>
+        <li><span class="ui-icon ui-icon-document"></span>@Html.ActionLink("Jef King", "JefKing", "Blog")</li>
+        <li><span class="ui-icon ui-icon-document"></span>@Html.ActionLink("Jaime Bueza", "JaimeBueza", "Blog")</li>
+      </ul>
+    </li>
+  }
+  else
+  { 
+    <li>@Html.ActionLink("Sign In", "LogOn", "Account")
+      <ul class="component mojoTemplate identity-provider-list" modelsource="abc.menu.IdentityProviders">
+        {{#Providers}}
+        <li><span class="ui-icon ui-icon-carat-1-e"></span><a href="{{LoginUrl}}" title="{{Name}}" class="{{CssClass}}">{{Name}}</a></li>
+        {{/Providers}} {{^Providers}}
+        <li><span class="ui-icon ui-icon-alert"></span>Sorry, could not connect to Microsoft ACS</li>
+        {{/Providers}}
+      </ul>
+    </li>
+    <li>@Html.ActionLink("Support", "Index", "Apps")
+      <ul>
+        <li><span class="ui-icon ui-icon-help"></span>@Html.ActionLink("Documentation", "Index", "Help")</li>
+      </ul>
+    </li>
+    <li>@Html.ActionLink("Blog", "Index", "Blog")
+      <ul>
+        <li><span class="ui-icon ui-icon-document"></span>@Html.ActionLink("Jef King", "JefKing", "Blog")</li>
+        <li><span class="ui-icon ui-icon-document"></span>@Html.ActionLink("Jaime Bueza", "JaimeBueza", "Blog")</li>
+      </ul>
+    </li>
+  }
+</ul>

@@ -1,0 +1,38 @@
+﻿@using Abc.Website;
+@using Abc.Configuration;
+@{
+    ViewBag.Title = "Control your DevOps without a sweat broken | ABC Solutions Ltd.";
+}
+<h1 class="custom-widgets-title no-topad">Control your DevOps without breaking a sweat</h1>
+<div class="small x2 main">
+  @*start*@
+  <div class="component component-sign-in" modelsource="abc.User.SignIn">
+    <h2>Managing your apps is easy</h2>
+    <p>Start by signing in with any of the identity providers below to have access to your applications and logging reports.</p>
+    <div class="identity-providers-wrapper">
+      <ul>
+        {{#Providers}}
+        <li><a href="{{LoginUrl}}" title="{{Name}}" class="{{CssClass}}">{{Name}}</a></li>
+        {{/Providers}} {{^Providers}}
+        <li>Sorry, could not connect to Microsoft ACS</li>
+        {{/Providers}}
+      </ul>
+    </div>
+  </div>
+  @* end*@
+</div>
+<div class="small">
+  <div class="section line full">
+    @Html.Partial("_Social")
+  </div>
+  <div class="section line full">
+    @Html.Partial("_Tweets")
+  </div>
+  <div class="section line full">
+    <a href="http://www.microsoft.com/bizspark/" title="Microsoft BizSpark" target="_blank">
+      <img style="width: 200px" alt="Microsoft BizSpark" src="@Url.ContentCdn("~/content/images/BizSpark_StartUp.jpg")" /></a>
+  </div>
+  <div class="section line full">
+    @Html.Partial("_WCG")
+  </div>
+</div>

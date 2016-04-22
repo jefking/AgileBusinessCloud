@@ -1,0 +1,607 @@
+/*
+	Stylesheet for color scheme
+
+	Color Scheme: Light
+	Color: Blue #ffad00
+
+*/
+
+::selection {
+	color: white;
+	background: #ffad00;
+}
+
+.highlight1{color:white; background:#ffad00!important;}
+.highlight2{border-bottom: 1px dotted #ffad00!important;}
+
+.button,
+a.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	background: #ffad00; /* Old browsers */		
+	border:1px solid #ffad00;
+}
+
+body,
+.header,
+.band.navigation{background: url("../../images/bg-content.png");}
+
+.content{background:white;}
+
+.box { background:#eee; border:1px solid #ccc;}
+
+.band.navigation {	
+	color: #e0e0e0; 
+}
+
+.band.footer {
+	background: /*url(../../images/stitch_large.png) left top repeat-x,*/
+				url(../../images/bg_dark.png) repeat left 2px,
+				#ffad00;		
+	color: #464646; 
+	border-top:1px solid #ccc;
+}
+
+.band.bottom {
+	background: url(../../images/stitch_staggered.png) left top repeat-x,
+				url(../../images/bg_bottom.png) repeat,
+				#343434;	
+	color: #e0e0e0;
+}
+
+/*ie multiple background image fallbacks*/
+.ie .band.navigation {
+	background: url(../../images/bg_dark.png) repeat left 2px #343434;
+}
+.ie .band.footer {
+	background: url(../../images/bg_dark.png) repeat left 2px #343434;
+}
+.ie .band.bottom {
+	background: url(../../images/bg_bottom.png) repeat #343434;
+}
+
+#nav{border-bottom: 1px solid #ccc;}
+
+nav.primary ul li a {
+	color: #464646;
+}
+
+nav.primary ul li a:hover {
+	background: #424242;
+	color:#ffad00;	
+}
+
+/*sub menu*/
+nav.primary ul ul {
+	/*background: url(../../images/bg_bottom.png);*/
+	background:#fffff;
+}
+
+
+nav.primary ul ul li {
+	border-bottom: 1px solid #fafafa;
+	background:#666;
+	color:white;
+}
+
+nav.primary ul ul li a {
+	color:white;
+}
+
+nav.primary ul li:hover > a,  nav.primary ul li a.active{
+	background: #ffad00;
+	color: white;
+}
+
+
+#tooltip, #colourTooltip {
+	background: 	black;
+	color: 	white;
+
+}
+
+
+
+
+	
+h1.logo a {
+	
+	background: url(../../images/logo_plain.png) no-repeat;
+	
+
+}
+
+
+/*images*/
+figure {
+	
+	border: 1px solid #ededed;
+	background: #ffffff;
+	
+}
+
+/*services tiles - home page*/
+.webtile{
+	background: url("../../images/web_tile_yellow.png") no-repeat 50%;
+}
+.mobitile{
+	background: url("../../images/mobile_tile_yellow.png") no-repeat 50%;
+}
+.desktoptile{
+	background: url("../../images/desktop_tile_yellow.png") no-repeat 50%;
+}
+.seotile{
+	background: url("../../images/speaker_tile_yellow.png") no-repeat 50%;
+}
+
+
+/*Blog Articles on Home Page*/
+#blog-section-home article{
+
+	border-bottom: 1px solid #ccc;	
+
+}
+
+#blog-section-home article h5 {
+	background: #34353D;
+	border-bottom: 1px solid #484955;
+	border-right: 1px solid #484955;
+	border-top: 1px solid #484955;
+	color: white;
+
+}
+
+#blog-section-home article h4, #blog-section-home article h5 a {
+	color: white !important;
+}
+
+
+#blog-section-home article h4 {
+	background: #ffad00;	
+	color: white;
+
+}
+
+/*blog styles - thumbnail articles, featured image articles, no image articles, single post*/
+#blog-section article{
+
+	border-bottom: 1px solid #ccc;
+}
+#blog-section article h5 {
+	background: #34353D;
+	border-bottom: 1px solid #484955;
+	border-right: 1px solid #484955;
+	border-top: 1px solid #484955;
+	color: white;
+
+}
+
+#blog-section article h5 a {
+	color: white !important;
+	
+}
+
+
+#blog-section article h4 {
+	background: #ffad00;	
+	color: white;
+
+}
+
+
+/*blog sidebar*/
+.widget{
+	background:#f1f1f1;
+
+}
+
+
+.widget ul li a{ color:#ffad00;}
+
+
+.widget h5{
+	
+	background: 
+	#D5D5D5 url('../../images/cat_icon_yellow.png') no-repeat 10px center;
+
+}
+
+
+.sidebar ul.tabs-content li ol.postlist li,
+.sidebar ul.tabs-content li.active ol.postlist li,
+ol.postlist li{padding: 0px;
+
+border-bottom: 1px dotted #ccc;}
+
+
+
+#related-posts h5{
+
+color: #333;
+
+border-bottom: 1px solid #ccc;}
+
+#related-posts ul {background: #f1f1f1;}
+
+
+#comments h5{background: url('../../images/comments_icon_yellow.png')no-repeat 0px center;
+text-shadow: #F1F1F1 0 1px 0;
+
+color: #333;
+border-bottom: 1px solid #ccc;}
+
+
+
+#previous-comments ul li{border-top:1px solid #eee;}
+
+
+
+hr {
+	
+	border-bottom: 1px dashed #e5e5e5;
+	
+}
+
+.divider {
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid white;
+
+}
+
+
+
+/*Pricing Table*/
+.pricingcol{background: #eee;}
+.preferred{border: 1px solid #ffad00;}
+.profitable{color:white; background:#ffad00;}
+.profitable h1,.profitable h2,.profitable h3,.profitable h4,.profitable h5,.profitable h6{color:white;}
+.profitable div.divider{
+	border-bottom: 1px solid white;}
+
+
+
+
+
+.ei-slider-loading{
+
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+
+}
+
+
+
+.ei-title{
+
+    background: url('../../images/stitch_large.png') repeat-y top right #dadada;
+
+}
+
+.ei-title h2{
+
+    color: #303030;
+    text-shadow: #CCC 0 1px 0px;
+    
+}
+.ei-title h3{
+
+    color: #000;
+}
+
+.ei-slider-thumbs li.ei-slider-element{
+
+    background: #ffad00;
+}
+.ei-slider-thumbs li a{
+
+    background: #6e6e6e;
+    
+    box-shadow:
+        0px 1px 1px 0px rgba(0,0,0,0.3),
+        0px 1px 0px 1px rgba(255,255,255,0.5);
+    transition: background 0.2s ease;
+}
+.ei-slider-thumbs li a:hover{
+    background-color: #f0f0f0;
+}
+
+	
+	.flex-control-nav li a {
+
+		background: #363636;
+		border: 1px solid #363636;
+
+	}
+	
+	.flex-control-nav li a.active,
+	.flex-control-nav li a:hover {
+		background: #ffad00;
+		border: 1px solid #363636;
+	}
+	
+	.prev{ background: #5e5e5e url('../../images/prev_icon.png') no-repeat;
+			}
+	.next{ background: #5e5e5e url('../../images/next_icon.png') no-repeat;
+			}
+	
+	a.prev:hover, a.next:hover{background-color:#ffad00;}
+
+
+
+/*articles*/
+article.sub header {
+	background: url(../../images/diagonal_pale.png) repeat;
+
+}
+
+
+
+article.sub header h4 {
+	
+	color: #999999;
+
+	background: url(../../images/bg_main.png) repeat #f8f8f8;
+
+}
+
+
+
+footer a,
+footer a:visited {
+	color: #6e6e6e;
+}
+
+footer a:hover {
+	color: #ffad00;
+
+}
+
+footer h3.logo {
+	margin: 13px 0 21px;
+}
+
+footer h3.logo a {
+
+	background: url(../../images/sprite.png) no-repeat 0 -50px;
+
+}
+
+footer.main div.footer_title {
+
+	background: #ffad00;
+
+}
+
+footer.main div.footer_title h4 {
+
+	color: white;
+
+}
+
+/*lists*/
+footer.main li {
+
+
+	background: url(../../images/stitch_staggered.png) repeat-x left bottom;
+	}
+	
+
+
+/*flickr*/
+div.flickr_feed img {
+
+	border: 1px solid #ededed;
+	background: #ffffff;
+}
+
+
+div.bio{
+ 
+	background: #313131; 
+
+}
+
+p.name{ font-size: 15px; color: #fcfcfc;}
+
+p.occupation{ color:#fafafa;}
+
+a.more{
+	background:url("../../images/icon_more_yellow.png") no-repeat; 
+
+}
+/*Portfolio*/
+#portfolio-nav li{
+	
+	background: #f6f6f6;
+	
+}
+
+#portfolio-nav li:hover{background:#ffad00;}
+
+#portfolio-nav li:hover a{color:#fff;}
+
+#portfolio-nav li.current {background:#ffad00;}
+
+#portfolio-nav li a{ color:#5e5e5e; 
+
+}
+
+#portfolio-nav li a:hover{color:#fff;}
+
+#portfolio-nav li.current a{color: #ffffff;}
+
+
+
+#portfolio li img{
+	/*border:4px solid #afafaf;*/
+}
+
+
+
+ul#portfolio-2col li .inner-item h4, ul#portfolio li .inner-item h4{
+
+	background:#ffad00;
+	color:#fff;
+
+}
+
+ul#portfolio-2col li .inner-item div.text, ul#portfolio li .inner-item div.text{
+
+	background:#fefefe;
+
+}
+
+
+
+ul#portfolio-2col li .inner-item div.text h3, ul#portfolio li .inner-item div.text h3{
+
+
+	color:#313030;
+}
+
+ul#portfolio-2col li .inner-item div.text p, ul#portfolio li .inner-item div.text p{
+
+	color:#595858;
+	
+}
+
+
+
+
+#featured-work-item{max-height:380px; 
+	background: #fff;
+	
+	border:1px solid #ccc;
+}
+
+
+
+
+
+#featured-work-item .prev{background: #aaa url('../../images/bg-arrow-sm.png') no-repeat 8px center;}
+#featured-work-item .next{background:#aaa url('../../images/bg-arrow-sm.png') no-repeat -25px center;}
+
+#featured-work-item .prev:hover, #featured-work-item .next:hover{background-color: #ffad00;}
+
+
+
+#related-works h4{
+text-shadow: #F1F1F1 0 1px 0;
+
+color: #333;
+border-bottom: 1px solid #ccc;}
+
+
+
+#related-works ul li a span, a.tile span{
+
+	background: #ffad00;
+	color: black;
+
+}
+
+
+ul.categories li {
+	border-bottom: 1px dashed #e5e5e5;
+
+}
+
+
+
+ul.categories li a:hover {
+	background: #ffffff;
+}
+
+
+
+ul.tabs li a.active {
+
+	background: #ffad00;
+	color: white;
+
+}
+
+.tabs-content li {
+
+	border: 1px solid #DDD;
+
+}
+
+
+
+
+
+.icon.rss {
+	color: #ef7908;
+}
+
+.icon.twitter {
+	color: #39bae6;
+}
+
+
+
+
+
+nav.pagination li a {
+
+	border-bottom: 3px solid #cccccc;
+
+}
+
+nav.pagination li a:hover,
+nav.pagination li a.selected {
+	background: #ffffff;
+
+	color: #ffad00;
+}
+
+/* #Page Styles
+================================================== */
+
+/*Typography*/
+div.band h4{color:#3e3e3e;}
+
+
+div.band h4.sub-meta a:hover{ color:#ffad00;}
+
+
+h3.sectionhead {
+
+	border-bottom:1px solid #ccc;
+
+}
+.about {background:url(../../images/about_icon_yellow.png) no-repeat 0 7px;}
+
+.portfolio{background:url(../../images/portfolio_icon_yellow.png) no-repeat 0 7px;}
+
+.articles{background:url(../../images/blog_icon_yellow.png) no-repeat 0 7px;}
+
+.typography{background:url(../../images/typo_icon_yellow.png) no-repeat 0 7px;}
+
+.controls{background:url(../../images/controls_icon_yellow.png) no-repeat 0 7px;}
+
+.table{background:url(../../images/table_icon_yellow.png) no-repeat 0 7px;}
+
+h1.pageTitle
+{
+	border-bottom: 2px solid #ffad00;	
+	background: #eee;
+
+}
+
+p.blockquote { border-left:2px solid #ffad00; }
+
+blockquote{ border-left: 1px solid #ffad00; }
+
+blockquote.right{ border-right:1px solid #ffad00!important; }
+
+
+/*Contacts*/
+.address{ background:url('../../images/address_icon_yellow.png') no-repeat; padding-left:30px;}
+
+.phone{ background:url('../../images/phone_icon_yellow.png') no-repeat 4px 6px; padding-left:30px;}
+
+.email{ background:url('../../images/email_icon_yellow.png') no-repeat 4px 6px; padding-left:30px;}

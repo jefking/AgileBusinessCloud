@@ -1,0 +1,120 @@
+﻿@using Abc.Website
+@model Abc.Website.Models.ApplicationDetailsModel
+@{
+  ViewBag.Title = "Edit Your Application | ABC";
+}
+@using (Html.BeginForm("Details", "Apps", FormMethod.Post, new { id = "add-application-form", @class = "" }))
+{
+  @Html.HiddenFor(model => model.ApplicationId)
+  @Html.HiddenFor(model => model.New)
+  @Html.ValidationSummary(true)
+   
+  <div class="full">
+    <h1 class="custom-widgets-title no-topad">Edit Application &gt;
+      @if (Model.Name.IsEmpty())
+      {
+        @Html.DisplayFor(model => model.ApplicationId)
+      }
+      else
+      {
+        @Html.DisplayFor(model => model.Name)
+      }
+    </h1>
+  </div>
+  <div class="section full application-details-page">
+    <div class="component">
+      <div class="UIBlock">
+      </div>
+      <div class="bar-notice notice-sucess">
+        Successfully created application!<span></span></div>
+      <div class="form-wrapper line">
+        <div class="large">
+          <h3 class="custom-widgets-title no-topad">Edit Application Details</h3>
+          <div class="field">
+            <label>Name</label>
+            <input type="text" name="Name" id="Name" value="@Html.DisplayTextFor(model => model.Name)" placeholder="Enter an application name" />
+            @Html.ValidationMessageFor(model => model.Name)
+          </div>
+          <div class="field">
+            <label>Environment</label>
+            <select name="Environment" id="Environment">
+              <option selected="true" value="Development">Development</option>
+              <option value="Testing">Testing</option>
+              <option value="Staging">Staging</option>
+              <option value="Production">Production</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Decsription</label>
+            <textarea id="Description" name="Description" placeholder="Enter a description for your application">@Html.DisplayTextFor(model => model.Description)</textarea>
+            @Html.ValidationMessageFor(model => model.Description)
+          </div>
+          <div class="section full">
+            <a href="#" class="button-normal green btn-save">Save Information</a>
+          </div>
+        </div>
+        <div class="large manager-controls">
+          <div class="section full line">
+            <h3 class="custom-widgets-title no-topad">Application Information</h3>
+            <p><span class="ui-icon ui-icon-info"></span>ID: @Model.ApplicationId</p>
+            <p><span class="ui-icon ui-icon-info"></span>Key: @Model.PublicKey</p>
+            @if (Model.IsValid)
+            {
+              <p><span class="ui-icon ui-icon-check"></span>Application is valid until @Html.DisplayFor(model => model.ValidUntil)</p>
+            }
+            else
+            {
+              <p><span class="ui-icon ui-icon-closethick "></span>Application is invalid since @Html.DisplayFor(model => model.ValidUntil)</p>
+            }
+            @if (Model.Deleted)
+            {
+              <p><span class="ui-icon ui-icon-closethick "></span>Application is marked for deletion</p>
+            }
+            @if (Model.Active)
+            {
+              <p><span class="ui-icon ui-icon-check"></span>Application is active</p>
+            }
+            else
+            {
+              <p><span class="ui-icon ui-icon-closethick "></span>Application is inactive</p>
+            }
+          </div>
+          @if (User.Identity.IsManager())
+          {
+            <div class="section full line">
+              <h3 class="custom-widgets-title no-topad">Application Administration</h3>
+              <p><span class="ui-icon ui-icon-gear "></span>Set this application to active? @Html.CheckBoxFor(model => model.Active)
+              </p>
+              <p><span class="ui-icon ui-icon-gear "></span>Delete this application? @Html.CheckBoxFor(model => model.Deleted)
+              </p>
+              <p><span class="ui-icon ui-icon-gear "></span>Set this application as valid? @Html.CheckBoxFor(model => model.IsValid)</p>
+              <p><span class="ui-icon ui-icon-gear "></span>Set this application's validity date</p>
+              @Html.EditorFor(model => model.ValidUntil)
+            </div>
+          }
+          else
+          {
+            @Html.HiddenFor(model => model.Deleted)
+            @Html.HiddenFor(model => model.IsValid)
+            @Html.HiddenFor(model => model.ValidUntil)
+          }
+        </div>
+      </div>
+      <div class="generated-app-settings">
+        <h2 class="custom-widgets-title no-topad">Congratulations!</h2>
+        <h3>Step 1: Add this snippet to your Azure config</h3>
+        <p>Below is the <strong>Application Identifier</strong> that you need to add to your app.config or web.config to get started!</p>
+        <textarea rows="7">&lt;configuration&gt;
+  &lt;appSettings&gt;
+      &lt;add key="ApplicationIdentifier" value="@Model.ApplicationId" /&gt;
+  &lt;/appSettings&gt;
+&lt;/configuration&gt;
+</textarea>
+        <br />
+        <h3>Step 2: Integrate!</h3>
+        <p>Learn more about the different ways of <a href="/Help" title="Documentation for Amazing Insights">integrating Amazing Insights at our documentation section</a>.</p>
+      </div>
+    </div>
+
+  </div>
+}

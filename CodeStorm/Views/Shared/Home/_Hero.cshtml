@@ -1,0 +1,27 @@
+﻿<div class="hero-container sixteen columns content">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span8">
+        <h1>Open DevOps</h1>
+        <p>Using our Tribes system, we help developers become better by keeping developers
+          connected with their tools, their teams, and their solutions </p>
+        <ul>
+          <li>Connect with other DevOps with the same mastery</li>
+          <li>Share information and solutions in real-time</li>
+          <li>Gain achievements by helping others and contributing to open source</li>
+        </ul>
+        @if (!User.Identity.IsAuthenticated)
+        {
+          <div class="call-out">
+            <a href="https://github.com/login/oauth/authorize?client_id=@ViewBag.ClientId" class="m-btn big blue btn-login-github">
+              <img src="@Url.Content("~/content/images/btn-github.png")" />
+              Sign In and Get Started! </a>
+          </div>
+        }
+      </div>
+      <div class="span4">
+        <img src="@Url.Content("~/content/images/homepage/bg-homepage-hero.png")" alt="Integration across all APIs" />
+      </div>
+    </div>
+  </div>
+</div>

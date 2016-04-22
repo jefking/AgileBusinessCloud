@@ -1,0 +1,232 @@
+﻿@using Abc.Website.Models
+@{
+  ViewBag.Title = "Our Site Map | ABC";
+  ViewBag.Keywords = "Cloud Computing, Windows Azure, Microsoft Cloud, Social DevOps, Site Map";
+  ViewBag.Description = "Provides a full mapping of our site sections and pages";
+
+  if (!User.Identity.IsAuthenticated)
+  {
+    Layout = "~/Views/Shared/Layouts/_CorporateLayout.cshtml";
+  
+  @Html.Partial("_CorporateHero")
+  
+  }
+  IEnumerable<UserPublicProfile> profiles = ViewBag.Profiles as IEnumerable<UserPublicProfile>;
+}
+<div class="content-container">
+  <div class="container">
+    <h1>Site Map</h1>
+    <h3>
+      <a href="//www.agilebusinesscloud.com">
+        Homepage</a>
+      Last updated: @DateTime.Now.ToShortDateString()
+    </h3>
+    <table class="table table-clean">
+      <tr>
+        <th>Section </th>
+        <th>Page </th>
+        <th>Link </th>
+      </tr>
+      <tr>
+        <td>Home </td>
+        <td>Home Page </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com" title="DevOps Community, Amazing Insights, Amazing Insights Collector | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Home </td>
+        <td>Amazing Insights - Real-Time Application Analytics </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Home/AmazingInsights" title="Amazing Insights - Real-Time Application Analytics | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Home </td>
+        <td>Amazing Insights Collector - Real-Time Server Metrics </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Home/AmazingInsightsCollector" title="Amazing Insights Collector - Real-Time Server Metrics | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Home </td>
+        <td>Open Source Initiatives </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Home/OpenSource" title="Open Source Initiatives | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Home </td>
+        <td>Microsoft&#39;s Windows Azure Training </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Home/Training" title="Microsoft&amp;#39;s Windows Azure Training">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Home </td>
+        <td>Contact Us </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Home/Contact" title="Contact Us">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Home </td>
+        <td>Terms of Use </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Home/TermsOfUse" title="Terms of Use | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Home </td>
+        <td>Privacy Policy </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Home/PrivacyPolicy" title="Privacy Policy | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Developer </td>
+        <td>Developer Application Information </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Apps" title="Developer Application Information | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Blog </td>
+        <td>Company Blog </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Blog" title="Company Blog | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Blog </td>
+        <td>Jef King&#39;s Blog </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Blog/JefKing" title="Jef King&amp;#39;s Blog | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Blog </td>
+        <td>Jaime Bueza&#39;s Blog </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Blog/JaimeBueza" title="Jaime Bueza&amp;#39;s Blog | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Help </td>
+        <td>Help </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Help" title="Help Section | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Help </td>
+        <td>Amazing Insights </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Help/AmazingInsights" title="Amazing Insights Help | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Help </td>
+        <td>Amazing Insights Collector </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Help/AmazingInsightsCollector" title="Amazing Insights Collector Help | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Help </td>
+        <td>Notifications </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Help/Notifications" title="Amazing Insights Notifications | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Help </td>
+        <td>Configuration </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Help/Configuration" title="Amazing Insights Configuration | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Authentication </td>
+        <td>Register </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Account/LogOn" title="Register | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Authentication </td>
+        <td>Sign In </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Account/LogOn" title="Sign In | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Corporate </td>
+        <td>Corporate </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Corporate" title="Corporate Section | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Corporate </td>
+        <td>About Us </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Corporate/About" title="About Us | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Corporate </td>
+        <td>Investors </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Corporate/Investors" title="Investor Relations | ABC">
+            Link</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Corporate </td>
+        <td>Partners </td>
+        <td>
+          <a href="//www.agilebusinesscloud.com/Corporate/Partner" title="Partners | ABC">
+            Link</a>
+        </td>
+      </tr>
+      @if (null != profiles)
+      {
+        foreach (var profile in profiles)
+        {
+        <tr>
+          <td>DevOps Community </td>
+          <td>
+            @profile.UserName
+          </td>
+          <td>
+            <a href="//www.agilebusinesscloud.com/Profile/@profile.AbcHandle" title="@profile.UserName's Profile | ABC">
+              Link</a>
+          </td>
+        </tr>
+        }
+      }
+    </table>
+  </div>
+</div>

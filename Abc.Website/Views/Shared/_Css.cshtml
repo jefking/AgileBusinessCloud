@@ -1,0 +1,18 @@
+﻿@using Abc.Website;
+@{
+    string currentController = this.ViewContext.RouteData.GetRequiredString("controller").ToLowerInvariant();
+}
+<link href='@Url.ContentCdn("~/content/css/revivas-skin.css")' rel="stylesheet" />
+@if (currentController.ToLowerInvariant() == "blog")
+{
+    <link href='@Url.ContentCdn("~/content/themes/theme-blue2.css")' rel="stylesheet" />
+}
+else if (currentController.ToLowerInvariant() == "staff")
+{
+    <link href='@Url.ContentCdn("~/content/themes/theme-purple.css")' rel="stylesheet" />
+}
+else
+{
+    <link href='@Url.ContentCdn("~/content/themes/theme-blue.css")' rel="stylesheet" />
+}
+<link href="@Url.ContentCdn("~/content/css/abc.css")" rel="stylesheet"/>

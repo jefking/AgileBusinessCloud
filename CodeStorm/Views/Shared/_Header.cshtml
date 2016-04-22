@@ -1,0 +1,36 @@
+﻿@{
+  string currentAction = this.ViewContext.RouteData.GetRequiredString("action").ToLowerInvariant();
+  string currentController = this.ViewContext.RouteData.GetRequiredString("controller").ToLowerInvariant();
+  string activeStyle = "internal active"; 
+}
+<header>
+  <div class="main container">
+    <div class="logo brand">
+      <a href="/" title="CodeStorm: Social DevOps">CodeStorm</a>
+    </div>
+    <nav class="primary">
+      <ul>
+        @if (!User.Identity.IsAuthenticated)
+        {
+          <li><a href="/Auth/" title="Sign In for an account with CodeStorm.in">Sign In</a>
+          </li>
+        }
+        else
+        {
+          <li>
+            <div class="m-btn-group">
+              <a class="m-btn dropdown-toggle" data-toggle="dropdown" href="#">@User.Identity.Name
+                <span class="caret"></span></a>
+              <ul class="m-dropdown-menu">
+                <li><a href="/Profile/Edit"><i class="icon-cog"></i>Account Settings</a></li>
+                <li class="divider"></li>
+                <li><a href="/Auth/Logout" title="Logout of CodeStorm"><i class="icon-off"></i>Logout</a></li>
+              </ul>
+            </div>
+          </li>
+        }
+        <li><a href="/Home/Storm" class="@(currentAction == "storm" ? activeStyle : string.Empty)">CodeStorm</a> </li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,186 @@
+﻿@{
+    ViewBag.Title = "Amazing Insights Configuration | ABC";
+    Layout = "~/Views/Shared/Layouts/_InsightsLayout.cshtml";
+}
+@Html.Partial("_AppNotifications")
+<div class="content help-configuration-page abc-content">
+    <div class="section">
+        <div class="tiny x3">
+            <h1 class="custom-widgets-title no-topad">
+                Application Configuration</h1>
+            <div class="section line full">
+                <div class="widget-tabs-horizontal">
+                    <ul class="widget-tabs-box clearfix">
+                        <li class="current"><a href="#" rel="content_test_01">Application Identifier</a></li>
+                        <li class=""><a href="#" rel="content_test_02">Amazing Insights</a></li>
+                        <li class=""><a href="#" rel="content_test_03">Amazing Insights Collector</a></li>
+                    </ul>
+                    <div class="widget-tabs-content inpad">
+                        <div id="content_test_01" class="tabs-content current">
+                            <table class="table-normal no-margin" summary="Application Identifer">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            Key
+                                        </th>
+                                        <th scope="col" nowrap>
+                                            Default Value
+                                        </th>
+                                        <th scope="col">
+                                            Description
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            ApplicationIdentifier
+                                        </td>
+                                        <td>
+                                            Empty
+                                        </td>
+                                        <td>
+                                            The Application Identifier is the single most important piece of information to
+                                            add to your configuration. The Application Identifier allows us to validate your
+                                            application and store data to your account. Without setting this no logging will
+                                            occur.
+                                            <br />
+                                            If you don't have an application identifier please create one by logging in, and
+                                            going to Create Application.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="content_test_02" class="tabs-content">
+                            <table class="table-normal no-margin" summary="Amazing Insights Configuration">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            Key
+                                        </th>
+                                        <th scope="col" nowrap>
+                                            Default Value
+                                        </th>
+                                        <th scope="col">
+                                            Description
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Abc.LogExceptions
+                                        </td>
+                                        <td>
+                                            true
+                                        </td>
+                                        <td>
+                                            This allows you to turn fault logging on and off; by setting to false, fault data
+                                            will not be logged to our servers.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Abc.LogPerformance
+                                        </td>
+                                        <td>
+                                            true
+                                        </td>
+                                        <td>
+                                            This allows you to turn performance logging on and off; by setting to false, performance
+                                            data will not be logged to our servers.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Abc.LogPerformanceMinimumDuration
+                                        </td>
+                                        <td>
+                                            1000ms
+                                        </td>
+                                        <td>
+                                            Performance data is only logged when the execution of the underlying code takes
+                                            longer than this threshold. The minimum value you can set is 250 milliseconds.
+                                        </td>
+                                    </tr>
+                                    <!--tr>Do we need to inform our users? LATER
+            <td>
+                Abc.DatumRemoteAddress
+            </td>
+            <td>
+                Web Services Url
+            </td>
+            <td>
+                This is the address which data is stored to from your application.
+            </td>
+        </tr-->
+                                    <!--tr>IN PROGRESS
+            <td>
+                Abc.ServerConfig
+            </td>
+            <td>
+            false
+            </td>
+            <td>
+            </td>
+        </tr-->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="content_test_03" class="tabs-content">
+                            <table class="table-normal no-margin" summary="Amazing Insights Collector Configuration">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            Key
+                                        </th>
+                                        <th scope="col" nowrap>
+                                            Default Value
+                                        </th>
+                                        <th scope="col">
+                                            Description
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Abc.ServerStatistics
+                                        </td>
+                                        <td>
+                                            true
+                                        </td>
+                                        <td>
+                                            This allows you to logging off for server statistics; CPU usage, RAM usage and IO
+                                            are all controlled through this setting. If you do not want this information to
+                                            be logged, don't run the application!
+                                        </td>
+                                    </tr>
+                                    <!--tr>This feature is not ready. No UI and too much data being shipped.
+            <td>
+                Abc.EventLog
+            </td>
+            <td>
+                false
+            </td>
+            <td>
+                This allows you to turn off centrally logging Event Log data from your servers.
+            </td>
+        </tr-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tiny">
+            @Html.Partial("_ClientResources")
+            <br />
+            @Html.Partial("_Social")
+            <br />
+            @Html.Partial("_Events")
+        </div>
+    </div>
+</div>

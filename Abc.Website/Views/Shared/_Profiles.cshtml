@@ -1,0 +1,22 @@
+﻿@using Abc.Website.Models
+@{
+    IEnumerable<UserPublicProfile> profiles = ViewBag.Profiles as IEnumerable<UserPublicProfile>;
+}
+@if (null != profiles)
+{
+    <h3 class="bopad">
+        <a href="//codestorm.in">CodeStorms</a></h3>
+    foreach (var profile in profiles)
+    {
+    <a href="/Profile/@profile.AbcHandle">
+        @if (string.IsNullOrWhiteSpace(profile.Gravatar))
+        {
+            <img src="//cdn.agilebusinesscloud.com/content/images/icons/unknown-user.jpg" height="50" width="50" title="@profile.UserName's Profile Picture" alt="@profile.UserName's Profile Picture" />
+        }
+        else
+        {
+            <img src="//gravatar.com/avatar/@profile.Gravatar?s=50" height="50" width="50" title="@profile.UserName's Profile Picture" alt="@profile.UserName's Profile Picture" />
+        }
+    </a>
+    }
+}

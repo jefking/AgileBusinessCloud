@@ -1,0 +1,17 @@
+﻿@model Abc.Website.Models.UserPublicProfile
+<div class="profile-tweet">
+</div>
+<script>
+  $(document).ready(function () {
+    var context = $(".profile-tweet");
+    context.tweet({
+      username: "@ViewBag.twitterHandle",
+      avatar_size: 32,
+      count: 4,
+      loading_text: "loading tweets..."
+    }).bind("loaded", function () {
+      $(".profile-tweet a.tweet_avatar img").addClass("img-circle");
+    });
+
+  });
+</script>

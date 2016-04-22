@@ -1,0 +1,15 @@
+
+#nav-tabs ul                    { background:url('theme-blue2/back-theme-blue2.png') repeat-x left top;}
+.dash-nav-cols li.current 		{ background: url('theme-blue2/back-theme-blue2.png') -200px -134px; }
+.dash-nav-cols li:hover 		{ background: url('theme-blue2/back-theme-blue2.png') -200px -134px transparent; }
+body 							{ background:#272727 url('theme-blue2/back-theme-blue2.png') repeat-x left -234px; }
+
+#toolbar ul a:hover 			{ color:#0B6E80; }
+
+#toolbar ul>li> a				{ color:#C7D9E0; }
+
+#toolbar ul ul a 				{ color:#0B6E80; }
+#toolbar ul ul a:hover 			{ color:#052E36; }
+
+   
+#toolbar ul li.current>a 		{ color:#0B6E80; }

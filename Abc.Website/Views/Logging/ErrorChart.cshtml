@@ -1,0 +1,70 @@
+﻿@using Abc.Website
+@using Abc.Services.Contracts
+@using System.Linq;
+@{
+  ViewBag.Title = "Errors > " + Model.Application.Name + " > " + Model.Application.Environment + " | ABC";
+}
+<h1 class="custom-widgets-title no-topad">@Model.Application.Name &gt; @Model.Application.Environment
+  &gt; Errors</h1>
+<p>@Model.Application.Description</p>
+
+
+<div id="wrapper content">
+
+  <style>
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+
+    .bar {
+      fill: steelblue;
+    }
+
+    .x.axis path {
+      display: none;
+    }
+  </style>
+
+  <div class="line component component-top-errors" data-id="@Model.Application.PublicKey">
+    <h2>Top Errors Breakdown (last 24 hours)</h2>
+    <br />
+    <div class="line">
+      <div class="UIBlock show"></div>
+
+      <div id="top-errors-bar-chart" class="line">
+        <section class="chart">
+        </section>
+      </div>
+
+      <div class="line" modelsource="abc.application.error.TopErrors">
+
+        <h2>Error Messages</h2>
+
+        {{#TopErrors}}
+          <div class="line">
+            <div class="unit size3of5">
+              <h3><span class="ui-icon ui-icon-alert"></span> {{Class}}</h3>
+              <p>{{Message}}</p>
+            </div>
+            <div class="unit size1of5 ">
+              <span class="rate-graph">{{Rate}}</span>
+              @*<p>Over 24 hour period</p>*@
+            </div>
+            <div class="unit size1of5 lastUnit">
+              <span class="right occurrence-count" title="There were {{Count}} occurrences of this error.">{{Count}}
+              </span>
+            </div>
+
+          </div>
+        {{/TopErrors}} {{^TopErrors}}
+          <p>No errors found.</p>
+        {{/TopErrors}}
+      </div>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+﻿@if (ViewBag.CanCreateAnApplication)
+{
+  <div class="bar-notice notice-info">
+    You have available applications, <a href="/Apps/Details?appId=00000000-0000-0000-0000-000000000000">create application</a> now!<span></span></div>
+}
+else if (User.Identity.IsAuthenticated)
+{
+  <div class="bar-notice notice-general">
+    You can another application at any time. Add new applications to enable logging from multiple applications or environments.<span></span></div>
+  <div class="manager-controls">
+    @Html.Partial("_paypalAddApplication")
+  </div>
+}
+else
+{
+  <div class="bar-notice notice-general">
+    @Html.ActionLink("Sign In", "LogOn", "Account") to get your application identifier now!<span></span></div>
+}

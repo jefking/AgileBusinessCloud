@@ -1,0 +1,29 @@
+﻿@{
+  ViewBag.Title = "CodeStorm: Definitive Source";
+}
+<div class="band mt25 mb25">
+  <div class="container">
+    <h3 class="sectionhead">#CodeStorm</h3>
+    <div class="sixteen columns clearfix">
+      <div class="codestorm-tweet row">
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    var context = $(".codestorm-tweet");
+    context.tweet({
+      query: "#CodeStorm",
+      avatar_size: 75,
+      count: 24,
+      refresh_interval: 3
+    }).bind("loaded", function () {
+
+      var tweets = $(context).find("ul > li")
+        .addClass("codestorm-tweet-item span4 big dark-blue");
+
+    });
+
+  });
+</script>

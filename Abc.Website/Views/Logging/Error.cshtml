@@ -1,0 +1,93 @@
+@using Abc.Website
+@using Abc.Services.Contracts
+@using System.Linq;
+@model Abc.Website.Models.ManagementModel
+@{
+  ViewBag.Title = "Errors > " + Model.Application.Name + " > " + Model.Application.Environment + " | ABC";
+  int count = ((IEnumerable<ErrorDisplay>)this.Model.Data).Count();
+}
+<h1 class="custom-widgets-title no-topad">@Model.Application.Name &gt; @Model.Application.Environment
+  &gt; Errors</h1>
+<p>@Model.Application.Description</p>
+@if (this.Model.Data != null && 0 < count)
+{
+  <table id="loggingData" class="table-normal table-sortable DataLayout no-margin logs table-normal error-logs"
+    summary="Logging, Errors">
+    <thead>
+      <tr>
+        <td style="display: none;">date
+        </td>
+        <th class="size1of5">Errors
+        </th>
+      </tr>
+    </thead>
+    @foreach (ErrorDisplay item in this.Model.Data)
+    {
+      <tr>
+        <td style="display: none;">@item.OccurredOn.ToString("yyyyMMddhhmmtt")
+        </td>
+        <td>
+          <ul class="component-logging-errors">
+            <li>
+              <div class="machine-name">@item.MachineName</div>
+              @if (!string.IsNullOrWhiteSpace(item.DeploymentId))
+              {
+                <div class="deploy">@item.DeploymentId</div>
+              }
+              @@
+                                <div class="date">@TimeZoneInfo.ConvertTime(item.OccurredOn, this.Model.Preference.TimeZone).ToString("yyyy-MM-dd hh:mm tt")</div>
+              <h4 class="message">
+                @if (1 < count)
+                {
+                  <a href="?identifier=@item.Identifier&key=@Model.Application.PublicKey" target="_blank" title="View details of this error">@item.Message</a>
+                }
+                else
+                {
+                  @item.Message
+                }
+              </h4>
+              <div class="help">
+                @if (item.ParentIdentifier != Guid.Empty)
+                {
+                  <a href="?identifier=@item.ParentIdentifier&key=@Model.Application.PublicKey" target="_blank" title="View details of this error" class="button-small round">
+                    <span class="ui-icon ui-icon-arrowreturnthick-1-n"></span></a>
+                }
+                <a href="http://stackoverflow.com/search?q=@item.ClassName%20;@item.Message" title="Get help on Stackxchange with this error" target="_blank">
+                  <img src="@Url.ContentCdn("~/content/images/StackOverflow.png")" alt="Search StackOverflow for help" width="20px" height="20px" /></a>
+                <a href="http://www.google.com/search?q=@item.ClassName%20;@item.Message" target="_blank" title="Google this error">
+                  <img src="@Url.ContentCdn("~/content/images/google.png")" alt="Search Google for help" height="20px" width="20px" /></a>
+              </div>
+              @if (!string.IsNullOrWhiteSpace(item.StackTrace))
+              {
+                <div class="stack-trace">
+                  <pre>@item.StackTrace</pre>
+                </div>
+              }
+            </li>
+          </ul>
+        </td>
+      </tr>
+    }
+  </table>
+
+  <p class="italic x-small">
+    * Data presented was collected during the past week; the 2,500 most recent entries.
+  </p>
+  <script>
+    $(document).ready(function () {
+      $('#loggingData').dataTable({
+        "aaSorting": [],
+        "aoColumnDefs": [
+                { "sSortDesc": true, "bSearchable": false, "bVisible": false, "aTargets": [0] },
+                { "bSearchable": true, "bSortable": false, "aTargets": [1] }
+        ]
+      });
+    });
+  </script>
+}
+else
+{
+  <div class="bar-notice notice-warning">
+    No errors have been logged.<span></span>
+  </div>
+}

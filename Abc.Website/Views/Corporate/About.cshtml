@@ -1,0 +1,64 @@
+﻿@using Abc.Website;
+@{
+  
+  ViewBag.Title = "About the team who is making DevOps more open and connected | ABC";
+  ViewBag.Keywords = "ABC, Cloud Computing, Windows Azure, Microsoft Cloud, DevOps, Software, Engineer, Amazing Insights, Amazing Insights Collector";
+  ViewBag.Description = "Agile Business Solutions provides a suite of tools to help DevOps be more connected to their solutions, their teams, their toolsets, and their code.";
+  Layout = "~/Views/Shared/Layouts/_CorporateLayout.cshtml"; 
+}
+@Html.Partial("_CorporateHero")
+<div class="content-container container">
+  <div class="team">
+    <div class="row">
+      <div class="span8">
+        <h1>Our Team</h1>
+        <iframe src="http://player.vimeo.com/video/49426587" width="100%" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <hr />
+        <section>
+          <div class="founder row-fluid">
+            <div class="span3">
+              <img src="@Url.ContentCdn("~/content/images/JefKing.jpg")" alt="Jef King" />
+            </div>
+            <div class="span9">
+              <h2>Jef King</h2>
+              <p>Jef has excelled in the software industry for over thirteen years. Leading many amazing and highly productive teams. His passion for technology and motivating individuals has kept his drive and focus strong. Early on in his career he showed an entrepreneurial spirit, starting multiple successful companies. He departed from this to learn more about the software industry by working with larger companies, such as Microsoft and Siemens. These diverse experiences have given a very unique perspective on teams and software engineering.</p>
+              <p>Jef frequently presents at conferences and training events. He currently runs the Windows Azure Vancouver Meetup which has over a hundred members. His presentations are geared towards the evolution that is occurring in the software industry known widely as cloud computing. </p>
+            </div>
+          </div>
+          <hr />
+          <div class="founder row-fluid">
+            <div class="span3">
+              <img src="@Url.ContentCdn("~/content/images/JaimeBueza.jpg")" alt="Jaime Bueza" />
+            </div>
+            <div class="span9">
+              <h3>Jaime Bueza</h3>
+              <p>Multi-discipline software engineer with experience in connecting brands to customers through cutting-edge, simple user experiences on web and mobile. Client work includes <a href="http://www.ea.com" target="_blank">Electronic Arts</a>, <a href="http://microsoft.com" target="_blank">Microsoft</a>, <a href="http://www.starbucks.com/" target="_blank">Starbucks</a>, <a href="http://ww2.cox.com/" target="_blank">Cox Communications</a>, <a href="http://www.jennycraig.com" target="_blank">Jenny Craig</a>, <a href="http://www.trueoriginals.com" target="_blank">Bacardi</a> and <a href="http://www.nintendo.com" target="_blank">Nintendo of America</a>. Other expertise includes user experience design, client-side performance optimization, platform integration (Google, LinkedIn, Facebook, Twitter, YouTube, Omniture, WebTrends), mobile web application development, product management, and open source initiatives.</p>
+              <p>Jaime specializes in HTML/CSS/JavaScript and is passionate about making DevOps more open and connected.</p>
+            </div>
+          </div>
+          <hr />
+          <div class="founder row-fluid">
+            <div class="span3">
+              <img src="@Url.ContentCdn("~/content/images/GeorgeDanes.jpg")" alt="George Danes" />
+            </div>
+            <div class="span9">
+              <h3>George Danes</h3>
+              <p>George is a Chartered Accountant currently servicing the public company sector providing assistance to board of directors to discharge their duties in relation to financial reporting and providing assistance with strategic decisions, financing and accounting related matters. Before this role, George had gained experience in a multitude of industries both locally and internationally working in public practice.</p>
+            </div>
+          </div>
+          <hr />
+        </section>
+      </div>
+      <div class="span4">
+        @Html.Partial("_Events")
+        <br />
+        <section>
+          <h4>Twitter Stream</h4>
+          @Html.Partial("_tweets")
+        </section>
+        <br />
+        @Html.Partial("_WCG")
+      </div>
+    </div>
+  </div>
+</div>

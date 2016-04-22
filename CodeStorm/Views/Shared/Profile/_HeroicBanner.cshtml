@@ -1,0 +1,47 @@
+﻿<div id="profile-scoreboard" class="codestorm-hero-view hero-view mb100" data-cs-abchandle="@ViewBag.abcHandle" data-cs-twitterhandle="@ViewBag.TwitterHandle" data-cs-githubhandle="@ViewBag.GithubHandle">
+  <div class="container">
+    <div class="hero-photo">
+      <img src="//gravatar.com/avatar/@Model.Gravatar?s=150" alt="@Model.UserName" />
+      <div class="fake-border">
+      </div>
+    </div>
+
+    <h2 class="hero-name">@Model.UserName</h2>
+    <ul class="hero-achievements">
+      <li>
+        <div class="achievement-value">
+          @(Model.Points / 10)%
+        </div>
+        <span class="achievement-label" title="Your Twitter Followers">Beast Mode</span>
+      <li>
+        <div class="achievement-value" data-bind="text: twitterFollowerCount">
+          0
+        </div>
+        <span class="achievement-label" title="Your Twitter Followers">Followers </span>
+      </li>
+      <li>
+        <div class="achievement-value" data-bind="text: twitterStatusCount">
+          0
+        </div>
+        <span class="achievement-label" title="Your Twitter activity">Tweets </span></li>
+    </ul>
+    <div class="hero-experience">
+      <div class="hero-experience-wrapper">
+        <span class="hero-experience-label"></span>
+      </div>
+      <span class="hero-experience-meter" style="width: @(Model.Points / 10)%;" title="@(Model.Points / 10)% Beast Mode"></span>
+    </div>
+    <div class="hero-description">
+      <p>@Model.Word</p>
+      <p>@Model.City
+        @if (Model.Country != null)
+        {
+          @Model.Country
+        }
+      </p>
+    </div>
+    @*  <div class="hero-commands">
+      <a class="m-btn green"><i class="icon-plus icon-white"></i>Follow</a>
+    </div>*@
+  </div>
+</div>

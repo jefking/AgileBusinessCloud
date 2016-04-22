@@ -1,0 +1,118 @@
+﻿@using Abc.Website;
+@using Abc.Services.Contracts;
+@using System.Linq;
+@model IEnumerable<ServerStatisticSetDisplay>
+@{
+    ViewBag.Title = "Amazing Insights Collector, Real-Time Server Usage Analytics | ABC";
+}
+@if (!User.Identity.IsAuthenticated)
+{
+    <div class="bar-notice notice-info">
+        Simply @Html.ActionLink("login", "LogOn", "Account") to get your free application
+        identifier so you can start collecting immediately!<span></span></div>
+}
+<div class="content amazing-insight-page">
+    <h1 class="custom-widgets-title no-topad">
+        Amazing Insights Collector</h1>
+    <div class="section">
+        <div class="tiny x3">
+            <div class="panel">
+                <div class="title">
+                    <h4>
+                        Windows Azure Compute</h4>
+                    <div class="theme">
+                    </div>
+                    <div class="drop">
+                    </div>
+                </div>
+                <div class="content inpad">
+                    <p>
+                        Amazing Insights Collector logs your Windows Azure Compute instances performance
+                        centrally! You are able to see your servers perforamnce in near real-time.
+                    </p>
+                    <p>
+                        Don't be left in the dark when performance spikes are happening! Without complete
+                        knowledge you are unable to scale at the right time.</p>
+                    <p>
+                        Quickly integrate into Windows Azure Web Roles and Worker Roles by adding us to
+                        your Visual Studio projects using our NuGet package:
+                    </p>
+                    <div class="inpad">
+                        <code>
+                            <pre>PM> Install-Package Abc.Client.Collector</pre>
+                        </code><a href="https://www.nuget.org/packages/Abc.Client.Collector" target="_blank"
+                            class="button-normal light-blue">On NuGet<span class="ui-icon ui-icon-extlink"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="title">
+                    <h4>
+                        Any Windows Server</h4>
+                    <div class="theme">
+                    </div>
+                    <div class="drop">
+                    </div>
+                </div>
+                <div class="content inpad">
+                    <p>
+                        We provide you with an application which you can run on any server (Windows Sever
+                        with .NET installed) to collect this information.</p>
+                    <div class="inpad">
+                        <a href="//cdn.agilebusinesscloud.com/download/Abc.Client.Collector.1.0.2.5.zip"
+                            class="button-normal light-green">Download (zip)<span class="ui-icon ui-icon-arrowthick-1-s"></span></a></div>
+                </div>
+            </div>
+        </div>
+    @if (null != this.Model)
+    {
+        <div class="tiny">
+            <h3>
+                Our Current Server Load</h3>
+            @foreach (ServerStatisticSetDisplay item in this.Model)
+            {
+                <div class="tiny line full">
+                    <table class="table-simple">
+                        <tr>
+                            <td>
+                                <h2>
+                                    CPU @Math.Round(item.CpuUsagePercentage, 0)%</h2>
+                            </td>
+                            <td>
+                                <h2>
+                                    Mem @Math.Round(item.MemoryUsagePercentage, 0)%</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            @if (null != item.NetworkPercentages)
+                            {
+                                <td>
+                                    <h3>
+                                        IO @Math.Round(item.PhysicalDiskUsagePercentage, 0)%</h3>
+                                </td>
+                                <td>
+                                    <h3>
+                                        NIC @Math.Round(item.NetworkPercentages.Max(), 0)%</h3>
+                                </td>
+                            }
+                            else
+                            {
+                                <td colspan="2">
+                                    <h3>
+                                        IO @Math.Round(item.PhysicalDiskUsagePercentage, 0)%</h3>
+                                </td>
+                            }
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+    </div>

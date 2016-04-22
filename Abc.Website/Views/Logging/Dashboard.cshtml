@@ -1,0 +1,171 @@
+﻿@using Abc.Website;
+@using Abc.Services.Contracts;
+@using System.linq
+@model Abc.Website.Models.DashboardModel
+@{
+    ViewBag.Title = "DevOps as realized by your larger team | ABC";
+}
+<div class="content logging-dashboard">
+    <h1 class="custom-widgets-title no-topad">@Model.Summary.Details.Name &gt; @Model.Summary.Details.Environment
+        &gt; Dashboard > Past 10 Minutes</h1>
+    <div class="section">
+        <div class="tiny x3">
+            @if (null != Model.Errors && 0 < Model.Errors.Count())
+            {
+                <div class="panel">
+                    <div class="title">
+                        <h4>
+                            Errors</h4>
+                        <div class="theme">
+                        </div>
+                        <div class="drop">
+                        </div>
+                    </div>
+                    <div class="content inpad">
+                        <table class="table-normal no-margin logs" id="errorData" summary="Error Dashboard Contents">
+                            @foreach (var item in Model.Errors)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.Message
+                                    </td>
+                                    <td>
+                                        <a href="?identifier=@item.Identifier&key=@Model.Application.PublicKey" target="_blank" class="button-small round">
+                                            <span class="ui-icon ui-icon-newwin"></span></a>
+                                        @if (item.ParentIdentifier != Guid.Empty)
+                                        {
+                                            <a href="?identifier=@item.ParentIdentifier&key=@Model.Application.PublicKey" target="_blank" class="button-small round">
+                                                <span class="ui-icon ui-icon-arrowreturnthick-1-n"></span></a>
+                                        }
+                                    </td>
+                                    <td>
+                                        <a href="http://stackoverflow.com/search?q=@item.ClassName%20;@item.Message" target="_blank">
+                                            <img src="@Url.ContentCdn("~/content/images/StackOverflow.png")" alt="Search StackOverflow for help" width="20px" height="20px" /></a>
+                                    </td>
+                                    <td>
+                                        <a href="http://www.google.com/search?q=@item.ClassName%20;@item.Message" target="_blank">
+                                            <img src="@Url.ContentCdn("~/content/images/google.png")" alt="Search Google for help" height="20px" width="20px" /></a>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            }
+            @if (null != Model.Occurrences && 0 < Model.Occurrences.Count())
+            {
+                <div class="panel">
+                    <div class="title">
+                        <h4>
+                            Performance</h4>
+                        <div class="theme">
+                        </div>
+                        <div class="drop">
+                        </div>
+                    </div>
+                    <div class="content inpad">
+                        <table class="table-normal no-margin logs" id="performanceData" summary="Performance Dashboard Contents">
+                            @foreach (var item in Model.Occurrences)
+                            {
+                                <tr onclick="window.open('/Logging/Performance?identifier=@item.Identifier&key=@Model.Application.PublicKey')">
+                                    <td class="duration">
+                                        <strong><span class="warning">@Math.Round(item.Duration.TotalMilliseconds / 1000, 2)
+                                            seconds</span></strong>
+                                    </td>
+                                    <td>
+                                        <strong>@item.Class:</strong> @item.Method
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="tiny">
+            <div class="panel">
+                <div class="title">
+                    <h4>
+                        Brief</h4>
+                    <div class="theme">
+                    </div>
+                    <div class="drop">
+                    </div>
+                </div>
+                <div class="content inpad">
+                    <table class="table-clean">
+                        <tr>
+                            <td colspan="2">
+                                <h3>@Model.Summary.Details.Name</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <h3>@Model.Summary.Details.Environment</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h2>
+                                    Servers @Model.Summary.ServerCount</h2>
+                            </td>
+                            <td>
+                                <h2>
+                                    Error @Model.Summary.ErrorCount</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>
+                                    Perf @Model.Summary.OccurrenceCount</h3>
+                            </td>
+                            <td>
+                                <h3>
+                                    Msg @Model.Summary.MessageCount</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <h3>
+                                    Servers</h3>
+                            </td>
+                        </tr>
+                        @foreach (var item in Model.Servers)
+                        {
+                            <tr>
+                                <td colspan="2">
+                                    @item
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+            @if (null != Model.Messages && 0 < Model.Messages.Count())
+            {
+                <div class="panel">
+                    <div class="title">
+                        <h4>
+                            Messages</h4>
+                        <div class="theme">
+                        </div>
+                        <div class="drop">
+                        </div>
+                    </div>
+                    <div class="content inpad">
+                        <table class="table-normal">
+                            @foreach (var item in Model.Messages)
+                            {
+                                <tr onclick="window.open('/Logging/Message?identifier=@item.Identifier&key=@Model.Application.PublicKey')">
+                                    <td>
+                                        @item.Message
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+﻿@using Abc.Website;
+@using Abc.Configuration;
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="en-us" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en-us" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en-us" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en-us" class="no-js">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="msvalidate.01" content="3DBB7B567B7F2F4200BCB1A02C58D4C2" />
+  <title>@ViewBag.Title</title>
+  <meta name="viewport" content="width=1024" />
+  <meta name="keywords" content="ABC, Cloud Computing, Windows Azure, Microsoft Cloud, DevOps, Software, Engineer, Amazing Insights, Amazing Insights Collector">
+  <meta name="description" content="Agile Business Solutions provides real-time analytics for DevOps who run cloud-based applications">
+  <meta name="author" content="Agile Business Cloud Solutions Ltd.">
+  @if (null == ViewBag.OGraphImage || string.IsNullOrWhiteSpace(ViewBag.OGraphImage as string))
+  {
+    <meta property="og:image" content="@Url.ContentCdn("~/content/images/logo-abc-blue-raw.png")" />
+  }
+  else
+  {
+    <meta property="og:image" content="@ViewBag.OGraphImage" />
+  }
+  <meta property="og:type" content="platform" />
+  <meta property="og:url" content="@Request.Url" />
+  <meta property="og:title" content="@ViewBag.Title" />
+  <meta property="og:site_name" content="ABC" />
+  @Html.Partial("_Css")
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/1.7.2/moment.min.js"></script>
+  <script src="http://d3js.org/d3.v2.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1/bootstrap.min.js"></script>
+  <script>
+    var ContentDeliveryNetworkScriptsURL = "@Url.ContentCdn("~/scripts/")";
+    var BlobScriptsURL = "@Url.ContentBlob("~/scripts/")";
+  </script>
+  @Html.Partial("_GoogleTracking")
+</head>
+<body>
+  @*Start Wrapper*@
+  <div id="toolbar-wrapper">
+    <div id="toolbar" class="old">
+      <h2 class="branding"><a href="/" title="Agile Business Cloud Solutions Ltd.">Agile
+        Business Cloud Solutions Ltd.</a></h2>
+      @Html.Partial("_MainMenu")
+    </div>
+  </div>
+  <div id="wrapper">
+    @Html.Partial("_Buttons")
+    <div id="wrapper-content">
+      @Html.Partial("_Tabs")
+      <div id="content">
+        @RenderBody()
+      </div>
+      <div id="footer">
+        @Html.Partial("_Footer")
+      </div>
+    </div>
+  </div>
+  @* End Wrapper *@
+  <script>
+    var ABC = { FederationTLD: "@Settings.Instance["FederationTLD"]" };
+  </script>
+  <script src="@Url.ContentBlob("~/scripts/dist/plugins.js")"></script>
+  <script src="@Url.Content("~/scripts/abc/helper/AggregateGraph.js")"></script>
+  <script src="@Url.Content("~/scripts/abc/helper/AuthenticationHelper.js")"></script>
+  <script src="@Url.ContentCdn("~/scripts/custom-revivas.js")"></script>
+  <script src="@Url.ContentCdn("~/scripts/dist/mojo.js")"></script>
+  <script src="@Url.ContentBlob("~/scripts/abc/app.js")"></script>
+</body>
+</html>

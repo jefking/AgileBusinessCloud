@@ -1,0 +1,27 @@
+﻿@model Abc.Website.Models.UserApplicationModel
+@{
+  ViewBag.Title = "Associate Users to Application";
+  Layout = "~/Views/Shared/Layouts/_InsightsLayout.cshtml";
+  var applications = new SelectList(Model.Applications, "ApplicationId", "DisplayText");
+  var users = new SelectList(Model.Users, "Identifier", "Email");
+}
+@using (Html.BeginForm("UserToApplication", "Staff"))
+{
+  <div class="section full">
+    <h1 class="custom-widgets-title no-topad">@ViewBag.Title</h1>
+  </div>
+   
+  <div class="section">
+    <div class="small x2">
+      <div class="section">
+        @Html.DropDownList("application", applications)
+        @Html.DropDownList("user", users)
+      </div>
+      <div class="section">
+        <div class="full">
+          <input type="submit" value="Associate User To Application" class="button-normal green" />
+        </div>
+      </div>
+    </div>
+  </div>
+}

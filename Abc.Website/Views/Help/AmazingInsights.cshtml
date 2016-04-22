@@ -1,0 +1,57 @@
+﻿@using Abc.Website;
+@{
+    ViewBag.Title = "Amazing Insights Get Started | ABC";
+}
+@Html.Partial("_AppNotifications")
+<div class="content help-amazing-insight-page">
+    <div class="section">
+        <div class="tiny x3">
+            <h1 class="custom-widgets-title no-topad">
+                Help > Get Started >Amazing Insights</h1>
+            <div class="section line full">
+                <p>
+                    Amazing Insights allows you to log performance data, exceptions and messages centrally.
+                    We provide the .NET dll's so that you are able to rapidly integrate our solution
+                    into yours in the minimum amount of effort using NuGet.</p>
+                <p>
+                    If you are familiar with NuGet then this will be simple. NuGet is a software packaging
+                    and publishing tool, which is free and integrates with Visual Studio. If you don't
+                    have NuGet you can download it <a href="//www.NuGet.org" target="_blank">here</a>.
+                </p>
+                <p>
+                    Right click on your project or solution and select "<strong>Manage NuGet Packages...</strong>";
+                    in the search enter "<strong>Amazing Insights</strong>".</p>
+                <img src="@Url.ContentCdn("~/content/images/help/AI-NuGet.PNG")" alt="Amazing Insights integration via NuGet" />
+                <p>
+                    Open the file <strong>App.config</strong> or <strong>Web.config</strong> which holds the configuration
+                    of your application. <strong>In order to start logging you will have to add your specific Application
+                        Identifier.</strong></p>
+                <pre>
+<code>&lt;configuration&gt;
+    &lt;appSettings&gt;
+        &lt;add key="ApplicationIdentifier" value="7150336D-73CA-..." /&gt;
+    &lt;/appSettings&gt;
+&lt;/configuration&gt;</code>
+</pre>
+                <img src="@Url.ContentCdn("~/content/images/help/AI-AppId.PNG")" alt="Add your application identifier to you enable logging" />
+            <p>Once this is done you are ready to start logging and view your data within the ABC portal.</p>
+            </div>
+        </div>
+        <div class="tiny">
+            <h3>
+                Sample Projects</h3>
+            <ul>
+                <li><span class="ui-icon ui-icon-extlink"></span><a href="//github.com/AgileBusinessCloud/LoggingExample"
+                    target="_blank">Logging Example</a></li>
+                <li><span class="ui-icon ui-icon-extlink"></span><a href="//github.com/AgileBusinessCloud/WcfExample"
+                    target="_blank">MVC3 Example</a></li>
+                <li><span class="ui-icon ui-icon-extlink"></span><a href="//github.com/AgileBusinessCloud/MVC3Example"
+                    target="_blank">WCF Example</a></li>
+            </ul>
+            <br />
+            @Html.Partial("_ClientResources")
+            <br />
+            @Html.Partial("_Social")
+        </div>
+    </div>
+</div>

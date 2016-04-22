@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+  <channel>
+    <title>ROR Sitemap for http://www.agilebusinesscloud.com/</title>
+    <link>http://www.agilebusinesscloud.com/</link>
+    <item>
+      <link>http://www.agilebusinesscloud.com/</link>
+      <title>ABC | Amazing Insights</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>daily</ror:updatePeriod>
+      <ror:sortOrder>0</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Apps</link>
+      <title>Application Information | Agile Business Cloud Solutions Ltd.</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>daily</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Help/Configuration</link>
+      <title>Application Configuration | Agile Business Cloud Solutions Ltd.</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>daily</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Blog</link>
+      <title>ABC | Company Blog</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>daily</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Blog/JefKing</link>
+      <title>ABC | Jef King&amp;#39;s Blog</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>daily</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Blog/JaimeBueza</link>
+      <title>ABC | Jaime Bueza&amp;#39;s Blog</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>daily</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Account/LogOn</link>
+      <title>Log On | Agile Business Cloud Solutions Ltd.</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>monthly</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Home/AmazingInsights</link>
+      <title>Amazing Insights - Real-Time Application Analytics | ABC</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>daily</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Home/AmazingInsightsCollector</link>
+      <title>Amazing Insights Collector - Real-Time Server Metrics | ABC</title>
+      <description>Amazing Insights Collector logs your cloud servers performance centrally!</description>
+      <ror:updatePeriod>daily</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Home/OpenSource</link>
+      <title>Open Source Initiatives | ABC</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>daily</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Home/Training</link>
+      <title>Microsoft&amp;#39;s Windows Azure Training | ABC</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>weekly</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Home/About</link>
+      <title>About Us | ABC</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>weekly</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Home/Contact</link>
+      <title>Contact Us | ABC</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>weekly</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Home/Partner</link>
+      <title>Partners | ABC</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>weekly</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Home/TermsOfUse</link>
+      <title>Terms of Use | Agile Business Cloud Solutions Ltd.</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>monthly</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Home/PrivacyPolicy</link>
+      <title>Privacy Policy | Agile Business Cloud Solutions Ltd..</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>monthly</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Home/Investors</link>
+      <title>Investor Relations | Agile Business Cloud Solutions Ltd..</title>
+      <description>Investor Relations</description>
+      <ror:updatePeriod>monthly</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Help</link>
+      <title>Partners | ABC</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>weekly</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Help/AmazingInsights</link>
+      <title>Partners | ABC</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>weekly</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+    <item>
+      <link>http://www.agilebusinesscloud.com/Help/AmazingInsightsCollector</link>
+      <title>Partners | ABC</title>
+      <description>Agile Business Solutions provides real-time analytics for cloud-based applications on Windows Azure</description>
+      <ror:updatePeriod>weekly</ror:updatePeriod>
+      <ror:sortOrder>1</ror:sortOrder>
+      <ror:resourceOf>sitemap</ror:resourceOf>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,87 @@
+﻿@using Abc.Website;
+@{
+  string currentAction = this.ViewContext.RouteData.GetRequiredString("action").ToLowerInvariant();
+  string currentController = this.ViewContext.RouteData.GetRequiredString("controller").ToLowerInvariant();
+}
+<div id="nav-tabs">
+  <ul>
+    @if (currentController == "home")
+    {
+      <li @(@currentAction == "amazinginsights" ? "class=current" : "")>@Html.ActionLink("Amazing Insights", "AmazingInsights", "Home", new { }, new { @class = "nav-ic-charts" })</li>
+      <li @(@currentAction == "amazinginsightscollector" ? "class=current" : "")>@Html.ActionLink("Amazing Insights Collector", "AmazingInsightsCollector", "Home", new { }, new { @class = "nav-ic-charts" })</li>
+      <li @(@currentAction == "opensource" ? "class=current" : "")>@Html.ActionLink("Open Source", "OpenSource", "Home", new { }, new { @class = "nav-ic-widgets" })</li>
+      <li @(@currentAction == "contact" ? "class=current" : "")>@Html.ActionLink("Contact Us", "Contact", "Home", new { }, new { @class = "nav-ic-typography" })</li>
+    }
+    else if (currentController == "account")
+    {
+      if (this.User.Identity.IsAuthenticated)
+      {
+      <li @(@currentAction == "profile" ? "class=current" : "")>@Html.ActionLink("Profile", "Profile", "Account", new { }, new { @class = "nav-ic-widgets" })</li>
+      }
+    }
+    else if (currentController == "corporate")
+    {
+      <li @(@currentAction == "about" ? "class=current" : "")>@Html.ActionLink("About Us", "About", currentController, new { }, new { @class = "nav-ic-typography" })</li>
+      <li @(@currentAction == "investors" ? "class=current" : "")>@Html.ActionLink("Investors", "Investors", currentController, new { }, new { @class = "nav-ic-gallery" })</li>
+      <li @(@currentAction == "partner" ? "class=current" : "")>@Html.ActionLink("Partners", "Partner", currentController, new { }, new { @class = "nav-ic-columns" })</li>
+    }
+    else if (currentController == "logging")
+    {
+      if (currentAction.StartsWith("performance"))
+      {
+      <li @(@currentAction == "performancechart" ? "class=current" : "")>@Html.ActionLink("Performance Hub", "PerformanceChart", "Logging", new { }, new { @class = "nav-ic-charts" })</li>
+      <li @(@currentAction == "performance" ? "class=current" : "")>@Html.ActionLink("Performance Logs", "Performance", "Logging", new { }, new { @class = "nav-ic-tables" })</li>
+      }
+      else if (currentAction.StartsWith("collector"))
+      {
+      <li @(@currentAction == "collectorbrief" ? "class=current" : "")>@Html.ActionLink("Server Utilization ", "CollectorBrief", "Logging", new { }, new { @class = "nav-ic-dashboard" })</li>
+      <li @(@currentAction == "collector" ? "class=current" : "")>@Html.ActionLink("Tables", "Collector", "Logging", new { }, new { @class = "nav-ic-tables" })</li>
+      }
+      else if (currentAction == "dashboard")
+      {
+      <li class="current">@Html.ActionLink("Dashboard", currentAction, "Logging", new { }, new { @class = "nav-ic-tables" })</li>
+      }
+      else
+      {
+      <li @(@currentAction == "errorchart" ? "class=current" : "")>@Html.ActionLink("Error Hub", "ErrorChart", "Logging", new { }, new { @class = "nav-ic-charts" })</li>
+      <li @(@currentAction == "error" ? "class=current" : "")>@Html.ActionLink("Error Logs", "Error", "Logging", new { }, new { @class = "nav-ic-tables" })</li>
+      }
+    }
+    else if (currentController == "apps")
+    {
+      <li @(@currentAction == "index" ? "class=current" : "")>@Html.ActionLink("Developer", "Index", "Apps", new { }, new { @class = "nav-ic-dashboard" })</li>
+      if (this.User.Identity.IsAuthenticated)
+      {
+      <li @(@currentAction == "application" ? "class=current" : "")>@Html.ActionLink("Applications", "Application", "Apps", new { }, new { @class = "nav-ic-tables" })</li>
+      
+        if (ViewBag.CanCreateAnApplication)
+        {
+      <li @(@currentAction == "details" ? "class=current" : "")>@Html.ActionLink("Create Application", "Details", "Apps", new { appId = Guid.Empty }, new { @class = "nav-ic-widgets" })</li>
+        }
+      }
+    }
+    else if (currentController == "blog")
+    {
+      <li @(@currentAction == "index" ? "class=current" : "")>@Html.ActionLink("Company", "Index", "Blog", new { }, new { @class = "nav-ic-typography" })</li>
+      <li @(@currentAction == "jefking" ? "class=current" : "")>@Html.ActionLink("Jef King", "JefKing", "Blog", new { }, new { @class = "nav-ic-typography" })</li>
+      <li @(@currentAction == "jaimebueza" ? "class=current" : "")>@Html.ActionLink("Jaime Bueza", "JaimeBueza", "Blog", new { }, new { @class = "nav-ic-typography" })</li>
+    }
+    else if (currentController == "help")
+    {
+      <li @(@currentAction == "index" ? "class=current" : "")>@Html.ActionLink("Application Identifier", "Index", "Help", new { }, new { @class = "nav-ic-columns" })</li>
+      <li @(@currentAction == "amazinginsights" ? "class=current" : "")>@Html.ActionLink("Amazing Insights", "AmazingInsights", "Help", new { }, new { @class = "nav-ic-columns" })</li>
+      <li @(@currentAction == "amazinginsightscollector" ? "class=current" : "")>@Html.ActionLink("Amazing Insights Collector", "AmazingInsightsCollector", "Help", new { }, new { @class = "nav-ic-columns" })</li>
+      <li @(@currentAction == "notifications" ? "class=current" : "")>@Html.ActionLink("Notifications", "notifications", "Help", new { }, new { @class = "nav-ic-columns" })</li>
+      <li @(@currentAction == "configuration" ? "class=current" : "")>@Html.ActionLink("Configuration", "Configuration", "Help", new { }, new { @class = "nav-ic-widgets" })</li>
+    }
+    else if (currentController == "staff")
+    {
+      <li @(@currentAction == "index" ? "class=current" : "")>@Html.ActionLink("Dashboard", "Index", "Staff", new { }, new { @class = "nav-ic-dashboard" })</li>
+      <li @(@currentAction == "blog" ? "class=current" : "")>@Html.ActionLink("Blog", "Blog", "Staff", new { }, new { @class = "nav-ic-typography" })</li>
+      <li @(@currentAction == "users" ? "class=current" : "")>@Html.ActionLink("Users", "Users", "Staff", new { }, new { @class = "nav-ic-tables" })</li>
+      <li @(@currentAction == "usergallery" ? "class=current" : "")>@Html.ActionLink("User Gallery", "UserGallery", "Staff", new { }, new { @class = "nav-ic-tables" })</li>
+      <li @(@currentAction == "usertoapplication" ? "class=current" : "")>@Html.ActionLink("User Apps", "UserToApplication", "Staff", new { }, new { @class = "nav-ic-forms" })</li>
+      <li @(@currentAction == "applicationsettings" ? "class=current" : "")>@Html.ActionLink("Settings", "ApplicationSettings", "Staff", new { }, new { @class = "nav-ic-tables" })</li>
+    }
+  </ul>
+</div>

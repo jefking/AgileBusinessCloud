@@ -1,0 +1,66 @@
+﻿@using Abc.Website;
+@using Abc.Services.Contracts;
+@model Abc.Website.Models.BlogModel
+@{
+    ViewBag.OGraphImage = "http//gravatar.com/avatar/8c4624380b0478d752699f719a7a65c5";
+  string tweet = string.Empty;
+  if (null != this.Model.Post)
+  {
+    ViewBag.Title = string.Format("{0} | Jef King | ABC", this.Model.Post.Title);
+    tweet = string.Format("{0} by @JefKingABC via @WeAreABC", this.Model.Post.Title);
+  }
+  else
+  {
+    ViewBag.Title = "Jef King's Blog | ABC";
+    tweet = "Jef King's Blog via @jefkingabc @WeAreABC";
+  }
+}
+<div class="line">
+  <div class="small x2">
+    <div class="panel">
+      <div class="title">
+        <h4>Jef King > Chief Executive Officer</h4>
+        <div class="theme">
+        </div>
+        <div class="drop">
+        </div>
+      </div>
+      <div class="content inpad">
+        @if (null != this.Model.Post)
+        {
+          <h1 class="custom-widgets-title no-topad">@this.Model.Post.Title</h1>
+          @Html.Raw(this.Model.Post.Content)
+          <p><span class='st_sharethis_hcount' st_url="@Request.Url.GetLeftPart(UriPartial.Path)?@this.Model.Post.Identifier" displayText='ShareThis'></span><span class='st_facebook_hcount' st_url="@Request.Url.GetLeftPart(UriPartial.Path)?@this.Model.Post.Identifier" displayText='Facebook'></span><span class='st_twitter_hcount' st_url="@Request.Url.GetLeftPart(UriPartial.Path)?@this.Model.Post.Identifier" displayText='Tweet' st_title="@tweet"></span><span class='st_linkedin_hcount' st_url="@Request.Url.GetLeftPart(UriPartial.Path)?@this.Model.Post.Identifier" displayText='LinkedIn'></span><span class='st_fblike_hcount' st_url="@Request.Url.GetLeftPart(UriPartial.Path)?@this.Model.Post.Identifier" displayText='Facebook Like'></span></p>
+          <pre>Posted On: @this.Model.Post.PostedOn.ToString("dddd, dd MMMM yyyy")</pre>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="line btn-follow-us">
+    <a href="https://twitter.com/JefKingABC" class="twitter-follow-button" data-show-count="false">Follow @@JefKingABC</a>
+    <script>      !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");</script>
+  </div>
+  <div class="small">
+    @if (null != this.Model.Posts)
+    {
+      <div class="section full line">
+        <ul class="widget-accordion">
+          @foreach (BlogEntry item in this.Model.Posts)
+          {
+            <li>@Html.ActionLink(@item.Title, "JefKing", "Blog", new { Identifier = @item.Identifier }, new { Title = string.Format("Posted On: {0:dd/MM/yyyy}", @item.PostedOn) })</li>
+          }
+        </ul>
+      </div>
+    }
+    <div class="section line full">
+      @Html.Partial("_Social")
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  var switchTo5x = true;
+</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">
+  stLight.options({ publisher: "ur-7b6dbc9a-758a-c3e2-94f8-89afe317159" });
+</script>

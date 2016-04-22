@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Staff Edit Blog";
+}
+<div class="section full">
+    <h1 class="custom-widgets-title no-topad">@ViewBag.Title</h1>
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend>Select Blog</legend>
+            <div>
+                <input type="radio" name="blogType" checked="checked" value="0">
+                <label for="test_radio_1">
+                    Company</label>
+            </div>
+            <div>
+                <input type="radio" name="blogType" value="1">
+                <label for="test_radio_2">
+                    Jef King</label>
+            </div>
+            <div>
+                <input type="radio" name="blogType" value="2">
+                <label for="test_radio_3">
+                    Mark Woodward</label>
+            </div>
+            <div>
+                <input type="radio" name="blogType" value="3">
+                <label for="test_radio_4">
+                    Jaime Bueza</label>
+            </div>
+        </fieldset>
+        <input type="text" name="title" />
+        <textarea name="html" class="_input_full" cols="50" rows="10"></textarea>
+        <input class="button-normal round light-blue" type="submit" value="Save Post" />
+    }
+</div>

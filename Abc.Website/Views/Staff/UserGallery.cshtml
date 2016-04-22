@@ -1,0 +1,22 @@
+﻿@{ ViewBag.Title = "User Management > User Gallery"; }
+<div class="section full">
+    <h1 class="custom-widgets-title no-topad">@ViewBag.Title</h1>
+    <div class="component component-user-gallery">
+        <ul class="mojoTemplate" modelsource="abc.User.Gallery">
+            {{#Users}}
+            <li class="user">
+                <div class="sheet">
+                </div>
+                <img src="{{Image}}" />
+                <div class="text-center">
+                    {{UserName}}</div>
+            </li>
+            {{/Users}} {{^Users}}
+            <li>
+                <h2>
+                    Sorry, no users found.</h2>
+            </li>
+            {{/Users}}
+        </ul>
+    </div>
+</div>

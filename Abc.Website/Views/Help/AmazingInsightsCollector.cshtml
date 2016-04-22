@@ -1,0 +1,103 @@
+﻿@using Abc.Website;
+@{
+    ViewBag.Title = "Amazing Insights Collector Get Started On Windows Azure | ABC";
+}
+@Html.Partial("_AppNotifications")
+<div class="content help-amazing-insight-collector-page">
+    <div class="section">
+        <div class="small x2">
+            <h1 class="custom-widgets-title no-topad">
+                Help > Get Started > Amazing Insights Collector</h1>
+            <div class="widget-tabs-horizontal">
+                <ul class="widget-tabs-box clearfix">
+                    <li class="current"><a href="#" rel="content_test_01">Windows Azure</a></li>
+                    <li class=""><a href="#" rel="content_test_02">Windows</a></li>
+                </ul>
+                <div class="widget-tabs-content inpad">
+                    <div id="content_test_01" class="tabs-content current">
+                        <div class="section line full">
+                            <p>
+                                Amazing Insights Collector allows you to collect server usage data from any Windows
+                                (Windows 98-Windows 7; Windows 2000-Windows 2008 R2). The current collection agent
+                                keeps track of CPU, Memory and Disk/Network IO usages.
+                            </p>
+                            <p>
+                                While you are not limited to integration with custom software; we have made a NuGet
+                                package for software engineers using Windows Azure. We run Amazing Insights Collector
+                                on our build server (Jenkins) to enable us to view the performance of this server.</p>
+                            <p>
+                                If you are familiar with NuGet then this will be simple. NuGet is a software packaging
+                                and publishing tool, which is free and integrates with Visual Studio. If you don't
+                                have NuGet you can download it <a href="//www.NuGet.org" target="_blank">here</a>.
+                            </p>
+                            <p>
+                                Right click on your project or solution and select "<b>Manage NuGet Packages...</b>";
+                                in the dialogue search for "<b>Amazing Insights Collector</b>".</p>
+                            <img src="@Url.ContentCdn("~/content/images/help/AIC-NuGet.PNG")" alt="Amazing Insights Collector integration via NuGet" />
+                            <p>
+                                After you have pressed install you will notice a new folder, with several files
+                                added to your project:</p>
+                            <img src="@Url.ContentCdn("~/content/images/help/AIC-Files.PNG")" alt="Files added to your solution during NuGet integration" />
+                            <p>
+                                Open the file <b>Abc.Client.Collector.exe.config</b> which holds the configuration
+                                of your collector. <b>In order to start logging you will have to add your specific Application
+                                    Identifier.</b></p>
+                <pre>
+<code>&lt;configuration&gt;
+    &lt;appSettings&gt;
+        &lt;add key="ApplicationIdentifier" value="7150336D-73CA-..." /&gt;
+    &lt;/appSettings&gt;
+&lt;/configuration&gt;</code>
+</pre>
+                            <img src="@Url.ContentCdn("~/content/images/help/AIC-AppId.PNG")" alt="Add your application identifier to you enable logging" />
+                            <p>
+                                Once you have added your Application Identifier to the application configuration
+                                open the service definition that you run on Windows Azure. Here you will add in
+                                the Windows Azure startup task to the roles in which you would like to run the Amazing
+                                Insights Collector on. We recommend running it on all your Web and Worker Roles.</p>
+<pre><code>&lt;Startup&gt;
+    &lt;Task commandLine="Collector\Abc.Client.Collector.exe"
+        taskType="background"
+        executionContext="limited" /&gt;
+&lt;/Startup&gt;</code>
+                </pre>
+                            <img src="@Url.ContentCdn("~/content/images/help/AIC-Task.PNG")" alt="Create a Windows Azure task to enable the loading of Amazing Insights Collector" />
+                            <p>
+                                Once this is done you are ready to upload your package to Windows Azure and view
+                                your data within the ABC portal.</p>
+                        </div>
+                    </div>
+                    <div id="content_test_02" class="tabs-content">
+                        <p>
+                            The Collector is a simple console application, all you need to do to run it is to
+                            download our zip file and modify the Abc.Client.Collector.exe.config file and enter
+                            your <strong>Application Identifier</strong>.</p>
+                <pre>
+<code>&lt;configuration&gt;
+    &lt;appSettings&gt;
+        &lt;add key="ApplicationIdentifier" value="7150336D-73CA-..." /&gt;
+    &lt;/appSettings&gt;
+&lt;/configuration&gt;</code>
+</pre>
+                        <a href="//cdn.agilebusinesscloud.com/download/Abc.Client.Collector.1.0.2.5.zip"
+                            class="button-normal light-green">Download (zip)<span class="ui-icon ui-icon-arrowthick-1-s"></span></a>
+                            <br />
+                            <br />
+                            <p>You can then add this application as a start-up task or Windows Service, depending on your environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="small">
+            <div class="section line full">
+                @Html.Partial("_ClientResources")
+            </div>
+            <div class="section line full">
+                @Html.Partial("_Social")
+            </div>
+            <div class="section line full">
+                @Html.Partial("_Events")
+            </div>
+        </div>
+    </div>
+</div>

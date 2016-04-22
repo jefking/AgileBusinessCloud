@@ -1,0 +1,55 @@
+﻿@using Abc.Website;
+@{
+    ViewBag.Title = "Application Identifier Help | ABC";
+}
+@Html.Partial("_AppNotifications")
+<div class="content help-aplication-identifier">
+    <div class="section">
+        <div class="tiny x3">
+            <h1 class="custom-widgets-title no-topad">
+                Getting Started > Application Identifier</h1>
+            <div class="section line full">
+                <p>
+                    ABC uses an <b>Application Identifier</b> to validate your application on our service.
+                    Application Identifiers allow you to logically separate your data; typically these
+                    identifiers are used for separating applications, and further separate them by a
+                    specific environment. One application could be separated by test, staging and production
+                    requiring the use of 3 Application Identifiers.</p>
+                <p>
+                    The application must be set in your configuration files; such as web.config, app.config
+                    or ServiceConfiguration.cscfg (for Windows Azure).</p>
+                <div class="widget-tabs-horizontal">
+                    <ul class="widget-tabs-box clearfix">
+                        <li class="current"><a href="#" rel="content_test_01">Web/App.config</a></li>
+                        <li class=""><a href="#" rel="content_test_02">Windows Azure</a></li>
+                    </ul>
+                    <div class="widget-tabs-content inpad">
+                        <div id="content_test_01" class="tabs-content current">
+                            <h2>
+                                Web & App Configuration Example</h2>
+                            <p>
+                                As you can see below adding your application identifier to your app.config or web.config
+                                is a trivial task.</p>
+                            <img src="@Url.ContentCdn("~/content/images/help/WebAppConfig.PNG")" alt="Web.config or App.config application identifier" />
+                        </div>
+                        <div id="content_test_02" class="tabs-content">
+                            <h2>
+                                Service Configuration Example</h2>
+                            <p>
+                                Choosing to put the application identifier within your Windows Azure configuration
+                                will enable any application run under this configuration to pick up this identifier.</p>
+                            <img src="@Url.ContentCdn("~/content/images/help/ServiceConfiguration.PNG")" alt="ServiceConfiguration.cscfg application identifier" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tiny">
+            @Html.Partial("_ClientResources")
+            <br />
+            @Html.Partial("_Social")
+            <br />
+            @Html.Partial("_Events")
+        </div>
+    </div>
+</div>

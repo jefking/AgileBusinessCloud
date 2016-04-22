@@ -1,0 +1,69 @@
+﻿@using Abc.Website;
+@{
+    ViewBag.Title = "Open Source Initiatives | ABC";
+}
+<div class="section open-source-page abc-content">
+    <div class="tiny x3 main">
+        <h1 class="custom-widgets-title no-topad">
+            Open Source</h1>
+        <h2 class="custom-widgets-title">
+            Amazing Insights Example Applications</h2>
+        <p>
+            We continue to provide examples of our logging platform through Open Source applications.
+            Please pull one down one of these example projects to view the source code changes
+            you can make to fully integrate.</p>
+        <p>
+            <a href="//github.com/AgileBusinessCloud/LoggingExample" target="_blank" class="button-normal light-blue">
+                Logging Example<span class="ui-icon ui-icon-extlink"></span></a> <a href="//github.com/AgileBusinessCloud/MVC3Example"
+                    target="_blank" class="button-normal light-blue">MVC Example<span class="ui-icon ui-icon-extlink"></span></a>
+            <a href="//github.com/AgileBusinessCloud/WcfExample" target="_blank" class="button-normal light-blue">
+                WCF Example<span class="ui-icon ui-icon-extlink"></span></a></p>
+        <h2 class="custom-widgets-title">
+            A-Trak</h2>
+        <p>
+            <img src="@Url.ContentCdn("~/content/images/a-trak-logo.png")" alt="A-Trak, Open Source on GitHub" />
+        </p>
+        <p>
+            A-Trak is a tool to manage deploying content and resources to the cloud. It can
+            also be used to backup content off of your primary cloud. Choose to move data in
+            9 different directions, between Windows Azure, Amazon S3 and Windows Folders.
+        </p>
+        <p>
+            This is a utility for easily synchronizing files between Blob Storage on Windows
+            Azure, S3 on Amazon or Windows folders.
+        </p>
+        <p>
+            Current applications: For Development teams to enable continuous deployment Make
+            use of CDN's in place; Release static websites; Backup data on secondary account;
+            Backup data off of your primary service provider.
+        </p>
+        <p>
+            We have built this to help you with your development, deployment and backup processes.
+            We use this tool as part of an automated deployment solution which deploys our website
+            assets Windows Azure Blob and CDN services during automated build process in Jenkins.
+            We have also helped a client backup data to a secondary Windows Azure Data Centre.</p>
+        <p>
+            <a href="//github.com/AgileBusinessCloud/A-Trak" target="_blank" class="button-normal light-blue">
+                GitHub Project<span class="ui-icon ui-icon-extlink"></span></a> <a href="//cdn.agilebusinesscloud.com/download/Abc.Atrak.1.0.2.8.zip"
+                    target="_blank" class="button-normal light-green">Download<span class="ui-icon ui-icon-arrowthick-1-s"></span></a></p>
+        <h2 class="custom-widgets-title">
+            Node.js URL Shortner</h2>
+        <p>
+            This is a URL Shortner written in Node.js which uses Azure Table Storage for the
+            backend. It is a great example of some amazing new technologies available today;
+            and that are compatible with Windows Azure.
+        </p>
+        <p>
+            <a href="//github.com/AgileBusinessCloud/NodeJS-Azure-URLShortener" target="_blank"
+                class="button-normal light-blue">URL Shortner<span class="ui-icon ui-icon-extlink"></span></a></p>
+    </div>
+    <div class="tiny">
+        @Html.Partial("_Profiles")
+        <br />
+        <br />
+        <br />
+        @Html.Partial("_Social")
+        <br />
+        @Html.Partial("_tweets")
+    </div>
+</div>

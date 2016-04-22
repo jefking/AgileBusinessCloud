@@ -1,0 +1,90 @@
+﻿@using Abc.Website;
+@model IEnumerable<Abc.Website.Models.ApplicationDetailsModel>
+@{
+  ViewBag.Title = "Manage Applications | ABC";
+  Layout = "~/Views/Shared/Layouts/_InsightsLayout.cshtml";
+  var grid = new WebGrid(source: ViewBag.Data as IEnumerable<Abc.Website.Models.ApplicationDetailsModel>, defaultSort: "ValidUntil", rowsPerPage: 100, canSort: true);
+}
+@if (ViewBag.CanCreateAnApplication)
+{
+  <div class="bar-notice notice-info">
+    You have available applications! Create a new application identifier which you can then use to log from another application, or environment.<span></span></div>
+}
+else
+{
+  <div class="bar-notice notice-general">
+    You can add more applications at any time. Adding new applications enables logging from multiple applications or environments.<span></span></div>
+}
+<div class="content application-page">
+  <div class="section full">
+    <div class="tiny x3">
+      <h1 class="custom-widgets-title no-topad">Your Applications</h1>
+      @if (null != ViewBag.Data)
+      {
+        <table id="applicationData" class="DataLayout table-normal no-margin component component-application-list" summary="Applications">
+          <thead>
+            <tr>
+              <th class="size5of5"></th>
+              <th class="size1of5">Id </th>
+              <th class="size5of5">Valid </th>
+              <th class="size5of5">Active </th>
+              <th class="size5of5" nowrap>Valid Until </th>
+              <th class="size1of5">Environment </th>
+              <th class="size1of5">Name </th>
+            </tr>
+          </thead>
+          @foreach (var item in ViewBag.Data)
+          {
+            <tr>
+              <td>
+                @if (item.IsOwner || User.Identity.IsManager())
+                {
+                  <a href="@Url.Action("Details", "Apps", new { appId = item.ApplicationId })" title="Configure This Application" class="button-small yellow"><span class='ui-icon ui-icon-gear'></span></a>
+                }
+              </td>
+              <td nowrap><a href="#" class="btn-copy-to-clipboard" data-id="@item.ApplicationId" style="position: relative;"><span title="@item.ApplicationId" class="ui-icon ui-icon-copy"></span></a>@item.ApplicationId</td>
+              <td>
+                @Html.Raw(string.Format("<span class='ui-icon ui-icon-{0}'></span>", item.IsValid ? "check" : "closethick"))
+              </td>
+              <td>
+                @Html.Raw(string.Format("<span class='ui-icon ui-icon-{0}'></span>", item.Active ? "check" : "closethick"))
+              </td>
+              <td>
+                @Html.Raw(string.Format("{0:MM/dd/yyyy}", item.ValidUntil))
+              </td>
+              <td>
+                @item.Environment
+              </td>
+              <td>
+                @item.Name
+              </td>
+            </tr>
+          }
+        </table>
+        <script type="text/javascript">
+
+
+
+
+          $(document).ready(function () {
+            $('#applicationData').dataTable({
+              "aaSorting": [[5, "desc"]],
+
+              "aoColumnDefs": [
+                        { "bSortable": false, "bSearchable": false, "aTargets": [0] },
+                        { "bSortable": false, "aTargets": [1] },
+                        { "bSortable": false, "bSearchable": false, "aTargets": [2] },
+                        { "bSortable": false, "bSearchable": false, "aTargets": [3] }
+                    ]
+            });
+          });
+        </script>
+      }
+    </div>
+    <div class="tiny">
+      @Html.Partial("_ClientResources")
+      <br />
+      @Html.Partial("_Social")
+    </div>
+  </div>
+</div>

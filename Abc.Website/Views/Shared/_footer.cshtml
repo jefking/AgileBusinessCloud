@@ -1,0 +1,26 @@
+﻿@using Abc.Website;
+<div class="line">
+    <div class="unit size1of3 company-pages">
+        <ul>
+            <li><a href="/Home/SiteMap" title="Site Map| ABC">Site Map</a></li>
+            <li><a href="/Home/Investors" title="Investor Relations | ABC">Investors</a></li>
+            <li><a href="/Home/TermsOfUse" title="Terms of Use | ABC">Terms of Use</a></li>
+            <li class="last"><a href="/Home/PrivacyPolicy" title="Privacy Policy | ABC">Privacy Policy</a></li>
+        </ul>
+    </div>
+    <div class="unit size1of3 company-members">
+        <ul>
+            <li>@Html.ActionLink("Jef King, CEO", "Contact", "Home")</li>
+            <li>@Html.ActionLink("Jaime Bueza, CXO", "Contact", "Home")</li>
+            <li>@Html.ActionLink("George Danes, CFO", "Contact", "Home")</li>
+            <li class="last">@Html.ActionLink("About Us", "About", "Corporate")</li>
+        </ul>
+    </div>
+    <div class="unit size1of3 lastUnit">
+        <a href="//www.microsoft.com" title="Microsoft" target="_blank">
+            <img src="@Url.ContentCdn("~/content/images/logo-microsoft-partner-large.png")" alt="Microsoft Silver Partnership" /></a>
+    </div>
+</div>
+<div class="line footer-copyright">
+    <span class="copyright">&copy; 2012 Agile Business Cloud Solutions Ltd. All rights reserved.</span>
+</div>

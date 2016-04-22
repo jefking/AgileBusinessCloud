@@ -1,0 +1,34 @@
+﻿/* TEAM */
+Azure Solutions Architect: Jef King
+Site: http://www.agilebusinesscloud.com/Home/About
+GitHub: https://github.com/jefkingabc
+Twitter: @JefKingABC
+Location: Vancouver, British Columbia, Canada
+
+Project Manager: Mark Woodward
+Site: http://www.agilebusinesscloud.com/Home/About
+Twitter: @MarkWoodwardABC
+Location: Vancouver, British Columbia, Canada
+
+Engineer: Jaime Bueza
+Site: http://www.agilebusinesscloud.com/Home/About
+GitHub: https://github.com/jbueza
+Twitter: @JaimeBuezaABC
+Location: Vancouver, British Columbia, Canada
+
+Business: George Danes
+Site: http://www.agilebusinesscloud.com/Home/About
+Twitter: @GeorgeDanesABC
+Location: Vancouver, British Columbia, Canada
+
+/* THANKS */
+Parents: Mom & Dad
+Company: Agile Business Cloud Solutions Ltd. http://www.agilebusinesscloud.com
+Microsoft: http://www.microsoft.com
+Google: http://www.google.com
+RESAAS: http://www.resaas.com
+
+/* SITE */
+Last update: 2011/08/17
+Standards: HTML, XML, WCF, W3C, REST, HTTP, TCP, IP
+Software: Windows Azure, Visual Studio, NotePad, Windows, .NET

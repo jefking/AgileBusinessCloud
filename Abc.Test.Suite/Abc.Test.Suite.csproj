@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1B77991A-E52B-4F6E-A0DD-CB9A1EE43EF9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abc.Test.Suite</RootNamespace>
+    <AssemblyName>Abc.Test.Suite</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abc.Underpinning.Administration">
+      <HintPath>..\..\..\3rd Party\Underpinning\Administration\Abc.Underpinning.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="Abc.Underpinning.Client">
+      <HintPath>..\..\..\3rd Party\Underpinning\Client\Abc.Underpinning.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth">
+      <HintPath>..\..\..\3rd Party\OpenAuth\DotNetOpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="GitSharp">
+      <HintPath>..\packages\GitSharp.0.3\lib\GitSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="GitSharp.Core">
+      <HintPath>..\packages\GitSharp.0.3\lib\GitSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqToTwitter, Version=2.1.0.1, Culture=neutral, PublicKeyToken=957107be965c25d9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LinqToTwitter.2.1.01\lib\net40\LinqToTwitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\3rd Party\Microsoft\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.7.0.3\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.StorageClient, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.1.7.0.0\lib\net35-full\Microsoft.WindowsAzure.StorageClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="msshrtmi, Version=1.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\3rd Party\Azure\msshrtmi.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Tamir.SharpSSH">
+      <HintPath>..\packages\Tamir.SharpSSH.1.1.1.13\lib\Tamir.SharpSSH.dll</HintPath>
+    </Reference>
+    <Reference Include="Winterdom.IO.FileMap">
+      <HintPath>..\packages\Winterdom.IO.FileMap.2.0.2.0\lib\Winterdom.IO.FileMap.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\ConfigurationSettingsTest.cs" />
+    <Compile Include="Client\CounterTest.cs" />
+    <Compile Include="Client\DatumConfigurationAdaptorTest.cs" />
+    <Compile Include="Client\MvcPerformanceMonitorAttributeTest.cs" />
+    <Compile Include="Client\NetworkCounterTest.cs" />
+    <Compile Include="Client\PerformanceCounterNamesTest.cs" />
+    <Compile Include="Client\SamplerTest.cs" />
+    <Compile Include="Client\WcfPerformanceMonitorAttributeTest.cs" />
+    <Compile Include="Client\WcfPerformanceMonitorTest.cs" />
+    <Compile Include="Collections\FirstInFirstOutTest.cs" />
+    <Compile Include="Configuration\ServerConfigurationTest.cs" />
+    <Compile Include="Configuration\AppSettingsAdaptorTest.cs" />
+    <Compile Include="Configuration\ConfigurationAdaptorOrderTest.cs" />
+    <Compile Include="Configuration\ConfigurationAdaptorTest.cs" />
+    <Compile Include="Configuration\HardCoded.cs" />
+    <Compile Include="Configuration\HardcodedConfigurationTest.cs" />
+    <Compile Include="Configuration\RoleEnvironmentConfigurationTest.cs" />
+    <Compile Include="Configuration\RoleEnvironmentAdaptorTest.cs" />
+    <Compile Include="Configuration\SettingsTest.cs" />
+    <Compile Include="Configuration\TableAdaptorTest.cs" />
+    <Compile Include="Contracts\ApplicationInformationTest.cs" />
+    <Compile Include="Contracts\ApplicationTest.cs" />
+    <Compile Include="Contracts\BinaryContentTest.cs" />
+    <Compile Include="Contracts\BinaryEmailTest.cs" />
+    <Compile Include="Contracts\BlogEntryTest.cs" />
+    <Compile Include="Contracts\BytesStoredTest.cs" />
+    <Compile Include="Contracts\CompanyTest.cs" />
+    <Compile Include="Contracts\ConfigurationTest.cs" />
+    <Compile Include="Contracts\ContactTest.cs" />
+    <Compile Include="Contracts\ApplicationQueryTest.cs" />
+    <Compile Include="Contracts\BytesStoredQueryTest.cs" />
+    <Compile Include="Contracts\ContentTest.cs" />
+    <Compile Include="Contracts\EmailTest.cs" />
+    <Compile Include="Contracts\ErrorDisplayTest.cs" />
+    <Compile Include="Contracts\ErrorItemTest.cs" />
+    <Compile Include="Contracts\EventLogItemTest.cs" />
+    <Compile Include="Contracts\FtpRequestTest.cs" />
+    <Compile Include="Contracts\LogItemTest.cs" />
+    <Compile Include="Contracts\LogQueryTest.cs" />
+    <Compile Include="Contracts\MessageDisplayTest.cs" />
+    <Compile Include="Contracts\MessageTest.cs" />
+    <Compile Include="Contracts\OccurrenceDisplayTest.cs" />
+    <Compile Include="Contracts\OccurrenceTest.cs" />
+    <Compile Include="Contracts\PayPalPaymentConfirmationTest.cs" />
+    <Compile Include="Contracts\PlaintextEmailTest.cs" />
+    <Compile Include="Contracts\ProfilePageTest.cs" />
+    <Compile Include="Contracts\SecuredTest.cs" />
+    <Compile Include="Contracts\ServerStatisticSetDisplayTest.cs" />
+    <Compile Include="Contracts\ServerStatisticSetTest.cs" />
+    <Compile Include="Contracts\TextContentTest.cs" />
+    <Compile Include="Contracts\ThroughputTest.cs" />
+    <Compile Include="Contracts\TokenTest.cs" />
+    <Compile Include="Contracts\UserApplicationTest.cs" />
+    <Compile Include="Contracts\UserPreferenceTest.cs" />
+    <Compile Include="Contracts\UserTest.cs" />
+    <Compile Include="Contracts\XmlContentTest.cs" />
+    <Compile Include="ConvertTest.cs" />
+    <Compile Include="Core\AnalyticsCoreTest.cs" />
+    <Compile Include="Core\ApplicationCoreTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ContentCoreTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\EmailCoreTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\LogCoreTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PaymentCoreTest.cs" />
+    <Compile Include="Core\UserCoreTest.cs" />
+    <Compile Include="Services\Data\ApplicationConfigurationTest.cs" />
+    <Compile Include="Services\Data\ApplicationInfoDataTest.cs" />
+    <Compile Include="Services\Data\ApplicationInfoValidatorTest.cs" />
+    <Compile Include="Services\Data\AzureBlobContainerTest.cs" />
+    <Compile Include="Services\Data\AzureTableTest.cs" />
+    <Compile Include="ConfigurationKeysTest.cs" />
+    <Compile Include="Services\Data\BinaryContainerTest.cs" />
+    <Compile Include="Services\Data\BinaryEmailDataTest.cs" />
+    <Compile Include="Services\Data\BlogRowTest.cs" />
+    <Compile Include="Services\Data\BytesStoredDataTest.cs" />
+    <Compile Include="Services\Data\BytesStoredDataValidatorTest.cs" />
+    <Compile Include="Services\Data\CodeStormSocialTest.cs" />
+    <Compile Include="Services\Data\CompanyRowTest.cs" />
+    <Compile Include="Services\Data\CompanyRowValidatorTest.cs" />
+    <Compile Include="Services\Data\ContactRowTest.cs" />
+    <Compile Include="Services\Data\ContactRowValidatorTest.cs" />
+    <Compile Include="Services\Data\ContentBlobContextTest.cs" />
+    <Compile Include="Services\Data\ContactGroupRowTest.cs" />
+    <Compile Include="Services\Data\ContactGroupRowValidatorTest.cs" />
+    <Compile Include="Services\Data\DataManagerLogTest.cs" />
+    <Compile Include="Services\Data\JsonPContainerTest.cs" />
+    <Compile Include="Services\Data\LatestServerStatisticsRowTest.cs" />
+    <Compile Include="Services\Data\Entity.cs" />
+    <Compile Include="Services\Data\EntityWithDataStore.cs" />
+    <Compile Include="Services\Data\ErrorDataTest.cs" />
+    <Compile Include="Services\Data\ErrorDataValidatorTest.cs" />
+    <Compile Include="Services\Data\EventLogRowTest.cs" />
+    <Compile Include="Services\Data\GeneralMetricRowTest.cs" />
+    <Compile Include="Services\Data\JsonContainerTest.cs" />
+    <Compile Include="Services\Data\LogDataTest.cs" />
+    <Compile Include="Services\Data\MentionTest.cs" />
+    <Compile Include="Services\Data\MessageDataTest.cs" />
+    <Compile Include="Services\Data\MessageDataValidatorTest.cs" />
+    <Compile Include="Services\Data\LogHistoryTest.cs" />
+    <Compile Include="Services\Data\NamingTest.cs" />
+    <Compile Include="Services\Data\OccurrenceDataTest.cs" />
+    <Compile Include="Services\Data\OccurrenceDataValidatorTest.cs" />
+    <Compile Include="Services\Data\PayPalPaymentConfirmationRowTest.cs" />
+    <Compile Include="Services\Data\PlaintextEmailDataTest.cs" />
+    <Compile Include="Services\Data\RoleRowTest.cs" />
+    <Compile Include="Services\Data\RoleRowValidatorTest.cs" />
+    <Compile Include="Services\Data\ServerStatisticsRowTest.cs" />
+    <Compile Include="Services\Data\TestStoreValidator.cs" />
+    <Compile Include="Services\Data\TextContainerTest.cs" />
+    <Compile Include="Services\Data\TwitterSourceTest.cs" />
+    <Compile Include="Services\Data\UserApplicationDataTest.cs" />
+    <Compile Include="Services\Data\UserApplicationValidationTest.cs" />
+    <Compile Include="Services\Data\UserPreferenceRowTest.cs" />
+    <Compile Include="Services\Data\UserProfileRowTest.cs" />
+    <Compile Include="Services\Data\UserPublicProfileTest.cs" />
+    <Compile Include="Services\Data\WindowsAzureQueueTest.cs" />
+    <Compile Include="Services\Data\XmlContainerTest.cs" />
+    <Compile Include="Diagnostics\PerformanceMonitorTest.cs" />
+    <Compile Include="Diagnostics\SessionTest.cs" />
+    <Compile Include="EventArgsTest.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="ExtensionMethodsTest.cs" />
+    <Compile Include="Global.Azure\AzureEnvironmentTest.cs" />
+    <Compile Include="Global.Azure\BinaryBlobTest.cs" />
+    <Compile Include="Global.Azure\ExtensionMethodsTest.cs" />
+    <Compile Include="Global\AzureComputeEmulator.cs" />
+    <Compile Include="Global\AzureStorageEmulator.cs" />
+    <Compile Include="Global\Configuration\TestConfig.cs" />
+    <Compile Include="Global\Emulator.cs" />
+    <Compile Include="Global\ExtensionMethods.cs" />
+    <Compile Include="Global\ResourceLoader.cs" />
+    <Compile Include="Global\StringHelper.cs" />
+    <Compile Include="Global\WebServer.cs" />
+    <Compile Include="MailgunTest.cs" />
+    <Compile Include="Models\BlogModelTest.cs" />
+    <Compile Include="Models\DashboardModelTest.cs" />
+    <Compile Include="Models\UserApplicationModelTest.cs" />
+    <Compile Include="Models\UserProfileTest.cs" />
+    <Compile Include="Models\UserPublicProfileTest.cs" />
+    <Compile Include="Models\UserRoleTest.cs" />
+    <Compile Include="RegexStatementTest.cs" />
+    <Compile Include="Services\ExtensionMethodsTest.cs" />
+    <Compile Include="Services\Game\ProfileTest.cs" />
+    <Compile Include="Services\Process\GamificationTest.cs" />
+    <Compile Include="Services\Process\PerformanceDigestTest.cs" />
+    <Compile Include="Services\Process\MessageDigestTest.cs" />
+    <Compile Include="Services\Process\LoggingCleanerTest.cs" />
+    <Compile Include="Services\Process\ErrorDigestTest.cs" />
+    <Compile Include="Services\Process\TwitterHarvestorTest.cs" />
+    <Compile Include="TestResources.cs" />
+    <Compile Include="Text\Ascii85Test.cs" />
+    <Compile Include="Services\Data\BytesStoredTest.cs" />
+    <Compile Include="Collections\PriorityCollectionTest.cs" />
+    <Compile Include="Collections\TreeTest.cs" />
+    <Compile Include="Services\Data\ContentSourceTest.cs" />
+    <Compile Include="Services\Data\DataCostCalculatorTest.cs" />
+    <Compile Include="Services\Data\DataSourceTest.cs" />
+    <Compile Include="Client\DatumWebServiceTest.cs" />
+    <Compile Include="Services\Data\DomainDataSourceTest.cs" />
+    <Compile Include="Initialize.cs" />
+    <Compile Include="Client\LoggerTest.cs" />
+    <Compile Include="Client\PerformanceMonitorClientTest.cs" />
+    <Compile Include="PerformanceMonitorTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Client\TraceTest.cs" />
+    <Compile Include="Services\Data\UserDataTest.cs" />
+    <Compile Include="Threading\SafeTimerTest.cs" />
+    <Compile Include="Validation\RuleTest.cs" />
+    <Compile Include="Validation\Validate.cs" />
+    <Compile Include="Validation\ValidatorTest.cs" />
+    <Compile Include="Website\AccountControllerTest.cs" />
+    <Compile Include="Website\AccountValidationTest.cs" />
+    <Compile Include="Models\ApplicationDetailsModelTest.cs" />
+    <Compile Include="Website\ApplicationSummaryTest.cs" />
+    <Compile Include="Website\AzureRoleProviderTest.cs" />
+    <Compile Include="Website\ErrorTest.cs" />
+    <Compile Include="Website\ExtensionMethodsTest.cs" />
+    <Compile Include="Website\HomeControllerTest.cs" />
+    <Compile Include="Website\IIdentityTest.cs" />
+    <Compile Include="Models\ManagementModelTest.cs" />
+    <Compile Include="Models\RegisterModelTest.cs" />
+    <Compile Include="Website\Security\GitHubProfileTest.cs" />
+    <Compile Include="Website\Security\GitHubResponseTest.cs" />
+    <Compile Include="Website\TableMembershipProviderTest.cs" />
+    <Compile Include="Website\UserPublicProfileTest.cs" />
+    <Compile Include="Website\UserRoleTest.cs" />
+    <Compile Include="Website\WebResponseTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Abc.Datum.Client\Abc.Logging.csproj">
+      <Project>{6A940787-0EF9-4DF9-A288-5007D6DCFC97}</Project>
+      <Name>Abc.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ABC.Global\Abc.Global.csproj">
+      <Project>{4473D006-DF5A-4B36-A27F-21B9F99FB977}</Project>
+      <Name>Abc.Global</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.Services.Core\Abc.Services.Core.csproj">
+      <Project>{373DC893-3484-43B3-A8A6-2A17D8289B34}</Project>
+      <Name>Abc.Services.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.Test.Services.Client\Abc.Test.Services.Client.csproj">
+      <Project>{A1592D87-4BAA-4838-B399-5CFB2AB20F73}</Project>
+      <Name>Abc.Test.Services.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.Website.Core\Abc.Website.Core.csproj">
+      <Project>{D7C1AF08-7461-4A4B-A9F7-04F67A51A172}</Project>
+      <Name>Abc.Website.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.Website\Abc.Website.csproj">
+      <Project>{47858208-530a-4ee6-b274-6842c2d01d7c}</Project>
+      <Name>Abc.Website</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

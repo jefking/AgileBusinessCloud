@@ -1,0 +1,72 @@
+﻿@using Abc.Website;
+@using Abc.Services.Contracts;
+@using System.Linq;
+@model Abc.Website.Models.ManagementModel
+@{
+  ViewBag.Title = "Performance Metrics > " + Model.Application.Name + " > " + Model.Application.Environment + " | ABC";
+  int count = ((IEnumerable<OccurrenceDisplay>)this.Model.Data).Count();
+}
+<h1 class="custom-widgets-title no-topad">@Model.Application.Name &gt; @Model.Application.Environment
+  &gt; Performance Metrics</h1>
+<p>@Model.Application.Description</p>
+@if (Model.Data != null && 0 < count)
+{
+  <div id="wrapper content">
+    <table id="loggingData" class="table-normal table-sortable DataLayout table-normal no-margin logs performance-logs" summary="Logging, Performance Metrics">
+      <thead>
+        <tr>
+          <th class="size5of5">Date </th>
+          <th class="size5of5">Duration </th>
+          <th class="size5of5">Server </th>
+          <th class="size5of5">Thread </th>
+          <th class="size1of5">Description </th>
+        </tr>
+      </thead>
+      @foreach (OccurrenceDisplay item in this.Model.Data)
+      {
+        string open = count > 1 ? string.Format("window.open('?identifier={0}&key={1}')", item.Identifier, Model.Application.PublicKey) : string.Empty;
+        <tr onclick="@open">
+          <td class="time" nowrap>@TimeZoneInfo.ConvertTime(item.OccurredOn, this.Model.Preference.TimeZone).ToString("yyyy-MM-dd hh:mm tt")
+          </td>
+          <td class="duration" nowrap><strong><span class="warning">@(item.Duration.TotalMilliseconds / 1000)</span></strong> </td>
+          <td>@item.MachineName</td>
+          <td>@item.ThreadId</td>
+          <td class="message">
+            <div class="line">
+              <strong>@item.Class</strong><br />
+              <em>@item.Method</em>
+              <br />
+              @if (!string.IsNullOrWhiteSpace(item.Message))
+              {
+                <strong>Message:</strong><p>@item.Message</p>
+              }
+              @if (null != item.SessionIdentifier)
+              {
+                <strong>Session:</strong> <em>@item.SessionIdentifier</em>
+              }
+              @if (!string.IsNullOrWhiteSpace(item.DeploymentId))
+              {
+                <strong>Deployment:</strong> @item.DeploymentId<br />
+              }
+            </div>
+            <div class="line">
+            </div>
+          </td>
+        </tr>
+      }
+    </table>
+  </div>
+  <p class="italic x-small">* Data presented was collected during the past week; the 2,500 most recent entries.</p>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function () {
+      $('#loggingData').dataTable({
+        "aaSorting": []
+      });
+    });
+  </script>
+}
+else
+{
+  <div class="bar-notice notice-warning">
+    No performance occurrences have been logged.<span></span></div>
+}
